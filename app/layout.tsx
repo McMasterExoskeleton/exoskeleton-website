@@ -32,6 +32,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/exo_white_scalable.svg" />
+        <title>McMaster Exoskeleton</title>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${exo_2.className} antialiased`}
       >
