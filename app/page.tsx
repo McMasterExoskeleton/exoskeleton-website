@@ -1,7 +1,13 @@
+import About from "@/components/About";
 import Hero from "@/components/Hero";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
-  return <Hero></Hero>;
+  return (
+    <>
+      <Hero></Hero>
+      <About></About>
+    </>
+  );
 }
