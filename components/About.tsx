@@ -29,7 +29,7 @@ function About() {
       style={{ minHeight: "750px" }}
     >
       {/* Particles Background */}
-      <ParticlesBackground />
+      <ParticlesBackground id="about-particles" />
 
       {/* Content with Z-Index to stay above particles */}
       <div className="w-1/2 mx-auto relative z-10 text-center text-white py-16 px-4 sm:px-6 lg:px-8 bg-black bg-opacity-50">

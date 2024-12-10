@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import {
@@ -12,7 +13,11 @@ import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, i
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
-const ParticlesBackground = () => {
+interface ParticlesBackgroundProps {
+  id: string;
+}
+
+const ParticlesBackground = ({ id }: ParticlesBackgroundProps) => {
   const [init, setInit] = useState(false);
 
   // this should be run only once per application lifetime
@@ -22,8 +27,8 @@ const ParticlesBackground = () => {
       // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
       // starting from v2 you can add only the features you need reducing the bundle size
       //await loadAll(engine);
-      await loadFull(engine);
-      //await loadSlim(engine);
+      //await loadFull(engine);
+      await loadSlim(engine);
       //await loadBasic(engine);
     }).then(() => {
       setInit(true);
@@ -117,10 +122,10 @@ const ParticlesBackground = () => {
   if (init) {
     return (
       <Particles
-        id="tsparticles"
+        id={id}
         particlesLoaded={particlesLoaded}
         options={options}
-        className="absolute inset-0 w-full h-full z-0"
+        className="absolute w-full h-full z-0"
       />
     );
   }

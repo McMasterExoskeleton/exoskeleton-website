@@ -11,8 +11,8 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-sm">
-      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 ">
+    <header className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-1">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -50,7 +50,6 @@ export default function Header() {
           </nav>
 
           {/* Mobile Menu Button */}
-          {/* Hamburger Icon */}
           <div className="md:hidden">
             <button
               onClick={toggleMenu}

@@ -1,10 +1,17 @@
+"use client";
+
 import React from "react";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import ParticlesBackground from "./ParticlesBackground";
 
 function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <footer className="relative bg-gray-900 text-white py-8 z-10">
+      {/* Particles Background */}
+      <ParticlesBackground id="footer-particles" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20 py-8">
+        {/* Email Section */}
         <p className="mb-4">
           Email us at:{" "}
           <a
@@ -14,8 +21,10 @@ function Footer() {
             exo@mcmaster.ca
           </a>
         </p>
-        <div className="flex justify-center space-x-6">
-          {/* Instagram */}
+
+        {/* Social Media Icons */}
+        <div className="flex justify-center space-x-6 mb-4">
+          {/* Instagram Icon */}
           <a
             href="https://www.instagram.com/mcmasterexo/"
             target="_blank"
@@ -24,7 +33,8 @@ function Footer() {
           >
             <FaInstagram size={24} />
           </a>
-          {/* LinkedIn */}
+
+          {/* LinkedIn Icon */}
           <a
             href="https://www.linkedin.com/company/mcmasterexo/?originalSubdomain=ca"
             target="_blank"
@@ -34,6 +44,8 @@ function Footer() {
             <FaLinkedin size={24} />
           </a>
         </div>
+
+        {/* Copyright */}
         <p className="mt-4 text-sm text-gray-400">
           © {new Date().getFullYear()} McMaster Exoskeleton Team. All rights
           reserved.
