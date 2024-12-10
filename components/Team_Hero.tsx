@@ -1,7 +1,6 @@
 import React from "react";
 import ParticlesHexagon from "./ParticlesHexagon";
 import ParticlesBackground from "./ParticlesBackground";
-import ParticlesTest from "./ParticlesTest";
 
 function Team_Hero() {
   return (

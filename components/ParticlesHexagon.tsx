@@ -2,7 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Particles from "@tsparticles/react";
-import { Engine, tsParticles } from "@tsparticles/engine";
+import {
+  Engine,
+  MoveDirection,
+  OutMode,
+  tsParticles,
+} from "@tsparticles/engine";
 import { loadFull } from "tsparticles"; // Load all features
 import { loadPolygonPath } from "tsparticles-path-polygon"; // Load polygon path generator
 
@@ -13,7 +18,7 @@ const ParticlesTest = ({ id }: { id: string }) => {
   useEffect(() => {
     const initializeParticles = async () => {
       await loadFull(tsParticles); // Load all features
-      await loadPolygonPath(tsParticles); // Load polygon path generator
+      //await loadPolygonPath(tsParticles); // Load polygon path generator
       setInit(true);
     };
 
@@ -35,11 +40,11 @@ const ParticlesTest = ({ id }: { id: string }) => {
         },
       },
       move: {
-        direction: "none",
+        direction: MoveDirection.none,
         enable: true,
         speed: 3, // Particle speed
         outModes: {
-          default: "destroy", // Ensure particles are destroyed after moving
+          default: OutMode.destroy, // Ensure particles are destroyed after moving
         },
         path: {
           clamp: false, // Don't restrict particles to the canvas
@@ -90,7 +95,7 @@ const ParticlesTest = ({ id }: { id: string }) => {
     },
     emitters: [
       {
-        direction: "none",
+        direction: MoveDirection.none,
         rate: {
           quantity: 1,
           delay: 0.25,
