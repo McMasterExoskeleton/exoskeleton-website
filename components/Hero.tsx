@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import BackgroundVideo from "./BackgroundVideo";
 
 function Hero() {
   const [isVideo, setVideo] = useState(false);
@@ -17,7 +18,7 @@ function Hero() {
         className="w-full h-full object-cover"
       /> */}
 
-      <video
+      {/* <video
         className="w-full h-full object-cover"
         controls
         preload="none"
@@ -29,7 +30,10 @@ function Hero() {
         <source src="/videos/hero_vid.webm" type="video/webm" />
         <source src="/videos/hero_vid.mov" type="video/quicktime" />
         Your browser does not support the video tag.
-      </video>
+      </video> */}
+      <div w-full h-full object-cover>
+        <BackgroundVideo></BackgroundVideo>
+      </div>
 
       {/* Title and Tagline with Shading */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white space-y-4 px-4 py-8 bg-black bg-opacity-50 z-10">
