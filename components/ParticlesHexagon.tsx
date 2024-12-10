@@ -2,12 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Particles from "@tsparticles/react";
-import {
-  Engine,
-  MoveDirection,
-  OutMode,
-  tsParticles,
-} from "@tsparticles/engine";
+import { MoveDirection, OutMode, tsParticles } from "@tsparticles/engine";
+
+import { Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles"; // Load all features
 import { loadPolygonPath } from "tsparticles-path-polygon"; // Load polygon path generator
 
@@ -18,7 +15,8 @@ const ParticlesTest = ({ id }: { id: string }) => {
   useEffect(() => {
     const initializeParticles = async () => {
       await loadFull(tsParticles); // Load all features
-      //await loadPolygonPath(tsParticles); // Load polygon path generator
+      // @ts-ignore
+      await loadPolygonPath(tsParticles); // Load polygon path generator
       setInit(true);
     };
 

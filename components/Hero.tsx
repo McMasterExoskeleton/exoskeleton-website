@@ -31,7 +31,7 @@ function Hero() {
         <source src="/videos/hero_vid.mov" type="video/quicktime" />
         Your browser does not support the video tag.
       </video> */}
-      <div w-full h-full object-cover>
+      <div className="w-full h-full object-cover">
         <BackgroundVideo></BackgroundVideo>
       </div>
 
