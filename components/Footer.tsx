@@ -1,54 +1,44 @@
-import Image from "next/image";
 import React from "react";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-      <a
-        className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-        href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image
-          aria-hidden
-          src="/file.svg"
-          alt="File icon"
-          width={16}
-          height={16}
-        />
-        Learn
-      </a>
-      <a
-        className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-        href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image
-          aria-hidden
-          src="/window.svg"
-          alt="Window icon"
-          width={16}
-          height={16}
-        />
-        Examples
-      </a>
-      <a
-        className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-        href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image
-          aria-hidden
-          src="/globe.svg"
-          alt="Globe icon"
-          width={16}
-          height={16}
-        />
-        Go to nextjs.org →
-      </a>
+    <footer className="bg-gray-900 text-white py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p className="mb-4">
+          Email us at:{" "}
+          <a
+            href="mailto:exo@mcmaster.ca"
+            className="text-blue-400 hover:underline"
+          >
+            exo@mcmaster.ca
+          </a>
+        </p>
+        <div className="flex justify-center space-x-6">
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/mcmasterexo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white"
+          >
+            <FaInstagram size={24} />
+          </a>
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/company/mcmasterexo/?originalSubdomain=ca"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white"
+          >
+            <FaLinkedin size={24} />
+          </a>
+        </div>
+        <p className="mt-4 text-sm text-gray-400">
+          © {new Date().getFullYear()} McMaster Exoskeleton Team. All rights
+          reserved.
+        </p>
+      </div>
     </footer>
   );
 }
