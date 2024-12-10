@@ -19,3 +19,9 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Add to global styles (or use tailwind's 'min-h-screen' class) */
+html, body {
+  height: 100%;
+}
+
