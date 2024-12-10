@@ -26,14 +26,14 @@ function About() {
       className={`relative flex items-center justify-center text-white py-16 px-8 text-center transition-opacity duration-1000 h-fill ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
-      style={{ minHeight: "500px" }}
+      style={{ minHeight: "750px" }}
     >
       {/* Particles Background */}
       <ParticlesBackground />
 
       {/* Content with Z-Index to stay above particles */}
       <div className="w-1/2 mx-auto relative z-10 text-center text-white py-16 px-4 sm:px-6 lg:px-8 bg-black bg-opacity-50">
-        <p className="text-sm sm:text-base md:text-2xl leading-relaxed font-light">
+        <p className="text-lg sm:text-lg md:text-3xl leading-relaxed font-light">
           <span className="font-bold">McMaster Exoskeleton</span> is a newly
           formed technical team. Entirely student-run, the multi-disciplinary
           team aims to design, build, and compete with a lower-limb exoskeleton
