@@ -1,5 +1,4 @@
 import ParticlesBackground from "@/components/ParticlesBackground";
-import ParticlesWord from "@/components/ParticlesWord";
 import React from "react";
 
 function ContactPage() {
@@ -7,7 +6,7 @@ function ContactPage() {
     <>
       <div className="relative z-10">
         {/* <ParticlesBackground id="test-2"></ParticlesBackground> */}
-        <ParticlesWord id="test-parts"></ParticlesWord>
+
         <div className="relative wrapper w-fill h-fill z-20">
           <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl font-bold mb-4">
