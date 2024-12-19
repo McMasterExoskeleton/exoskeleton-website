@@ -33,6 +33,7 @@ export default function Header() {
               href="/sponsors"
               className="text-gray-900 hover:bg-gray-50 hover:text-gray-900 px-3 py-2 rounded-md font-medium"
             >
+              {/* think of a better description because we want to add the prfs that are with us as well */}
               Sponsors
             </Link>
             <Link
