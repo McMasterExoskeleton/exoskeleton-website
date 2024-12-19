@@ -8,19 +8,19 @@ const affiliates = [
     name: "McMaster Engineering Society",
     logo: "/MES_logo.svg",
     description: "The McMaster Engineering Society fosters collaboration and innovation within the engineering community.",
-    website: "https://mes.mcmaster.ca",
+    website: "https://www.macengsociety.ca/",
   },
   {
     name: "McMaster Engineering Society",
     logo: "/MES_logo.svg",
     description: "The McMaster Engineering Society fosters collaboration and innovation within the engineering community.",
-    website: "https://mes.mcmaster.ca",
+    website: "https://www.macengsociety.ca/",
   },
   {
     name: "McMaster Engineering Society",
     logo: "/MES_logo.svg",
     description: "The McMaster Engineering Society fosters collaboration and innovation within the engineering community.",
-    website: "https://mes.mcmaster.ca",
+    website: "https://www.macengsociety.ca/",
   },
 ];
 
@@ -29,51 +29,51 @@ const sponsors = {
     {
       name: "Bronze Sponsor 1",
       logo: "/MES_logo.svg",
-      website: "https://mes.mcmaster.ca",
+      website: "https://www.macengsociety.ca/",
     },
     {
       name: "Bronze Sponsor 1",
       logo: "/MES_logo.svg",
-      website: "https://mes.mcmaster.ca",
+      website: "https://www.macengsociety.ca/",
     },
     {
       name: "Bronze Sponsor 1",
       logo: "/MES_logo.svg",
-      website: "https://mes.mcmaster.ca",
+      website: "https://www.macengsociety.ca/",
     },
   ],
   silver: [
     {
       name: "Silver Sponsor 1",
       logo: "/MES_logo.svg",
-      website: "https://mes.mcmaster.ca",
+      website: "https://www.macengsociety.ca/",
     },
     {
       name: "Silver Sponsor 1",
       logo: "/MES_logo.svg",
-      website: "https://mes.mcmaster.ca",
+      website: "https://www.macengsociety.ca/",
     },
     {
       name: "Silver Sponsor 1",
       logo: "/MES_logo.svg",
-      website: "https://mes.mcmaster.ca",
+      website: "https://www.macengsociety.ca/",
     },
   ],
   gold: [
     {
       name: "Gold Sponsor 1",
       logo: "/MES_logo.svg",
-      website: "https://mes.mcmaster.ca",
+      website: "https://www.macengsociety.ca/",
     },
     {
       name: "Gold Sponsor 1",
       logo: "/MES_logo.svg",
-      website: "https://mes.mcmaster.ca",
+      website: "https://www.macengsociety.ca/",
     },
     {
       name: "Gold Sponsor 1",
       logo: "/MES_logo.svg",
-      website: "https://mes.mcmaster.ca",
+      website: "https://www.macengsociety.ca/",
     },
   ],
 };
