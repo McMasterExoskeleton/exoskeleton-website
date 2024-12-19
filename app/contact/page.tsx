@@ -1,40 +1,47 @@
-import ParticlesBackground from "@/components/ParticlesBackground";
 import React from "react";
+import { FaEnvelope, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 function ContactPage() {
   return (
-    <>
-      <div className="relative z-10">
-        {/* <ParticlesBackground id="test-2"></ParticlesBackground> */}
-
-        <div className="relative wrapper w-fill h-fill z-20">
-          <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-              Join McMaster Exoskeleton
-            </h1>
-            <p className="text-lg sm:text-2xl mb-6">
-              Are you passionate about robotics, biomechanics, and making a
-              real-world impact? Our team could be the right one for you! Follow
-              our
+    <div className="min-h-screen flex flex-col bg-gray-800 text-white py-12">
+      <h1 className="text-5xl font-bold mb-12 text-center">Contact Us</h1>
+      <div className="flex-grow flex items-center justify-center">
+        <div className="flex flex-col items-center space-y-8 w-3/4">
+          <div className="flex items-center space-x-4 justify-center">
+            <div className="flex flex-col items-center">
+              <FaEnvelope className="text-5xl" />
+              <p className="text-xl">macexo@mcmaster.ca</p>
+            </div>
+          </div>
+          <div className="flex items-center space-x-4 justify-center">
+            <div className="flex flex-col items-center">
+              <FaInstagram className="text-5xl" />
               <a
                 href="https://www.instagram.com/mcmasterexo/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 p-1"
+                className="text-xl text-blue-400 hover:underline"
               >
-                Instagram
-              </a>{" "}
-              for announcements about applications
-            </p>
-            <p className="text-lg sm:text-2xl mb-8">
-              As part of our team you will get practical, hands-on experience by
-              actively contributing to the design, development, and testing of
-              cutting-edge technology in the field of robotics.
-            </p>
+                @mcmasterexo
+              </a>
+            </div>
+          </div>
+          <div className="flex items-center space-x-4 justify-center">
+            <div className="flex flex-col items-center">
+              <FaLinkedin className="text-5xl" />
+              <a
+                href="https://www.linkedin.com/company/mcmasterexo/?originalSubdomain=ca"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl text-blue-400 hover:underline"
+              >
+                McMaster Exoskeleton
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
