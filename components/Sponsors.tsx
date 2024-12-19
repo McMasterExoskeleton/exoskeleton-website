@@ -3,23 +3,39 @@
 import React, { useState } from "react";
 import ParticlesHexagon from "./ParticlesHexagon";
 
+type AffiliateProps = {
+  logo: string;
+  name: string;
+  description: string;
+  website: string;
+};
+
+type SponsorProps = {
+  logo: string;
+  name: string;
+  website: string;
+};
+
 const affiliates = [
   {
     name: "McMaster Engineering Society",
     logo: "/MES_logo.svg",
-    description: "The McMaster Engineering Society fosters collaboration and innovation within the engineering community.",
+    description:
+      "The McMaster Engineering Society fosters collaboration and innovation within the engineering community.",
     website: "https://www.macengsociety.ca/",
   },
   {
     name: "McMaster Engineering Society",
     logo: "/MES_logo.svg",
-    description: "The McMaster Engineering Society fosters collaboration and innovation within the engineering community.",
+    description:
+      "The McMaster Engineering Society fosters collaboration and innovation within the engineering community.",
     website: "https://www.macengsociety.ca/",
   },
   {
     name: "McMaster Engineering Society",
     logo: "/MES_logo.svg",
-    description: "The McMaster Engineering Society fosters collaboration and innovation within the engineering community.",
+    description:
+      "The McMaster Engineering Society fosters collaboration and innovation within the engineering community.",
     website: "https://www.macengsociety.ca/",
   },
 ];
@@ -78,7 +94,12 @@ const sponsors = {
   ],
 };
 
-const AffiliateCard = ({ logo, name, description, website }: any) => (
+const AffiliateCard = ({
+  logo,
+  name,
+  description,
+  website,
+}: AffiliateProps) => (
   <a
     href={website}
     target="_blank"
@@ -97,7 +118,7 @@ const AffiliateCard = ({ logo, name, description, website }: any) => (
   </a>
 );
 
-const SponsorCard = ({ logo, name, website }: any) => (
+const SponsorCard = ({ logo, name, website }: SponsorProps) => (
   <a
     href={website}
     target="_blank"
@@ -143,7 +164,9 @@ function Sponsors() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">How You Can Help</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+            How You Can Help
+          </h2>
           <p className="text-lg sm:text-xl md:text-2xl leading-relaxed mb-8">
             Join us in shaping the future of mobility and innovation. Your
             support empowers our student-run team to design and compete with
@@ -195,7 +218,9 @@ function Sponsors() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-8">Our Affiliates</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-8">
+            Our Affiliates
+          </h2>
           <p className="text-lg sm:text-xl text-gray-300 mb-12">
             Meet the organizations that help drive our mission forward.
           </p>
@@ -221,7 +246,8 @@ function Sponsors() {
         <div className="relative z-10 max-w-7xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl font-bold mb-8">Our Sponsors</h2>
           <p className="text-lg sm:text-xl text-gray-300 mb-12">
-            We are immensely grateful to our sponsors for their continued support and dedication.
+            We are immensely grateful to our sponsors for their continued
+            support and dedication.
           </p>
 
           <h3 className="text-3xl sm:text-4xl font-bold mb-6">Gold Tier</h3>
