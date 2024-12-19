@@ -12,6 +12,7 @@ import whiteGear from "@/public/white_gear.svg";
 // import { loadAll } from "@tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
 import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
+import { loadCogShape } from "@tsparticles/shape-cog";
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
 interface ParticlesBackgroundProps {
@@ -30,6 +31,7 @@ const ParticlesBackground = ({ id }: ParticlesBackgroundProps) => {
       //await loadAll(engine);
       //await loadFull(engine);
       await loadSlim(engine);
+      await loadCogShape(engine);
       //await loadBasic(engine);
     }).then(() => {
       setInit(true);
@@ -71,13 +73,13 @@ const ParticlesBackground = ({ id }: ParticlesBackgroundProps) => {
       },
       particles: {
         color: {
-          value: "#00bcd4", // Neon light blue color for particles
+          value: "#192841", // Light gray color for particles (gears)
         },
         links: {
-          color: "#00bcd4", // Neon blue color for links between particles
+          color: "#192841", // Light gray color for links between particles
           distance: 150, // Distance for linking particles
           enable: true,
-          opacity: 0.5, // Link opacity
+          opacity: 1, // Fully opaque links
           width: 1, // Link width
         },
         move: {
@@ -95,20 +97,20 @@ const ParticlesBackground = ({ id }: ParticlesBackgroundProps) => {
             enable: true,
             area: 800, // Area where particles are densely populated
           },
-          value: 100, // Total number of particles
+          value: 80, // Total number of particles
         },
         opacity: {
-          value: 0.5, // Particles have some transparency
+          value: 1, // Fully opaque particles
         },
         shape: {
-          type: "circle", // Circular shape for particles
+          type: "cog",
         },
         size: {
-          value: { min: 3, max: 6 }, // Random size for particles between 3 and 6
+          value: { min: 15, max: 20 },
           animation: {
             enable: true, // Particle size animation
             speed: 3, // Speed of size change
-            minimumValue: 3, // Minimum size value
+            minimumValue: 10, // Minimum size value
           },
         },
       },
