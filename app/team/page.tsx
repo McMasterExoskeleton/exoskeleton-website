@@ -8,7 +8,7 @@ function page() {
     <>
       <Team_Hero />
       <TeamLeads />
-      <Faculty />
+      {/* <Faculty /> */}
     </>
   );
 }

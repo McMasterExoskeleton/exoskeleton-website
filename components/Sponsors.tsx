@@ -24,20 +24,20 @@ const affiliates = [
       "The McMaster Engineering Society fosters collaboration and innovation within the engineering community.",
     website: "https://www.macengsociety.ca/",
   },
-  {
-    name: "McMaster Engineering Society",
-    logo: "/MES_logo.svg",
-    description:
-      "The McMaster Engineering Society fosters collaboration and innovation within the engineering community.",
-    website: "https://www.macengsociety.ca/",
-  },
-  {
-    name: "McMaster Engineering Society",
-    logo: "/MES_logo.svg",
-    description:
-      "The McMaster Engineering Society fosters collaboration and innovation within the engineering community.",
-    website: "https://www.macengsociety.ca/",
-  },
+  // {
+  //   name: "McMaster Engineering Society",
+  //   logo: "/MES_logo.svg",
+  //   description:
+  //     "The McMaster Engineering Society fosters collaboration and innovation within the engineering community.",
+  //   website: "https://www.macengsociety.ca/",
+  // },
+  // {
+  //   name: "McMaster Engineering Society",
+  //   logo: "/MES_logo.svg",
+  //   description:
+  //     "The McMaster Engineering Society fosters collaboration and innovation within the engineering community.",
+  //   website: "https://www.macengsociety.ca/",
+  // },
 ];
 
 const sponsors = {
@@ -146,7 +146,7 @@ function Sponsors() {
     <div className="relative bg-black text-white">
       {/* Hero Section */}
       <div className="relative h-screen flex items-center justify-center text-center bg-black">
-        <ParticlesHexagon id="sponsors-hero" />
+        <ParticlesHexagon id="sponsors-hero" key="particles1" />
         <div className="relative z-10">
           <h1 className="text-6xl sm:text-7xl font-bold mb-4">
             Sponsors and Affiliates
@@ -159,9 +159,9 @@ function Sponsors() {
 
       {/* Sponsorship Package Section */}
       <div className="relative bg-gray-900 text-white py-16 px-8 overflow-hidden">
-        <div className="absolute inset-0">
-          <ParticlesHexagon id="sponsorship-particles" />
-        </div>
+        {/* <div className="absolute inset-0">
+          <ParticlesHexagon id="sponsorship-particles" key="particles2" />
+        </div> */}
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
@@ -213,9 +213,9 @@ function Sponsors() {
 
       {/* Affiliates Section */}
       <div className="relative bg-gray-800 text-white py-16 px-8 overflow-hidden">
-        <div className="absolute inset-0">
-          <ParticlesHexagon id="affiliates-particles" />
-        </div>
+        {/* <div className="absolute inset-0">
+          <ParticlesHexagon id="affiliates-particles" key="3" />
+        </div> */}
 
         <div className="relative z-10 max-w-7xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl font-bold mb-8">
@@ -239,56 +239,61 @@ function Sponsors() {
       </div>
 
       {/* Sponsors Section */}
-      <div className="relative bg-gray-900 text-white py-16 px-8 overflow-hidden">
-        <div className="absolute inset-0">
+      {/* remove false to display sponsor placeholder*/}
+      {false && (
+        <div className="relative bg-gray-900 text-white py-16 px-8 overflow-hidden">
+          {/* <div className="absolute inset-0">
           <ParticlesHexagon id="sponsors-section-particles" />
+        </div> */}
+          <div className="relative z-10 max-w-7xl mx-auto text-center">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8">
+              Our Sponsors
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-300 mb-12">
+              We are immensely grateful to our sponsors for their continued
+              support and dedication.
+            </p>
+
+            <h3 className="text-3xl sm:text-4xl font-bold mb-6">Gold Tier</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+              {sponsors.gold.map((sponsor) => (
+                <SponsorCard
+                  key={sponsor.name}
+                  logo={sponsor.logo}
+                  name={sponsor.name}
+                  website={sponsor.website}
+                />
+              ))}
+            </div>
+
+            {/* Silver Tier */}
+            <h3 className="text-3xl sm:text-4xl font-bold mb-6">Silver Tier</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 justify-center">
+              {sponsors.silver.map((sponsor) => (
+                <SponsorCard
+                  key={sponsor.name}
+                  logo={sponsor.logo}
+                  name={sponsor.name}
+                  website={sponsor.website}
+                />
+              ))}
+            </div>
+
+            {/* Bronze Tier */}
+            <h3 className="text-3xl sm:text-4xl font-bold mb-6">Bronze Tier</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 justify-center">
+              {sponsors.bronze.map((sponsor) => (
+                <SponsorCard
+                  key={sponsor.name}
+                  logo={sponsor.logo}
+                  name={sponsor.name}
+                  website={sponsor.website}
+                />
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-8">Our Sponsors</h2>
-          <p className="text-lg sm:text-xl text-gray-300 mb-12">
-            We are immensely grateful to our sponsors for their continued
-            support and dedication.
-          </p>
-
-          <h3 className="text-3xl sm:text-4xl font-bold mb-6">Gold Tier</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-            {sponsors.gold.map((sponsor) => (
-              <SponsorCard
-                key={sponsor.name}
-                logo={sponsor.logo}
-                name={sponsor.name}
-                website={sponsor.website}
-              />
-            ))}
-          </div>
-
-          {/* Silver Tier */}
-          <h3 className="text-3xl sm:text-4xl font-bold mb-6">Silver Tier</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 justify-center">
-            {sponsors.silver.map((sponsor) => (
-              <SponsorCard
-                key={sponsor.name}
-                logo={sponsor.logo}
-                name={sponsor.name}
-                website={sponsor.website}
-              />
-            ))}
-          </div>
-
-          {/* Bronze Tier */}
-          <h3 className="text-3xl sm:text-4xl font-bold mb-6">Bronze Tier</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 justify-center">
-            {sponsors.bronze.map((sponsor) => (
-              <SponsorCard
-                key={sponsor.name}
-                logo={sponsor.logo}
-                name={sponsor.name}
-                website={sponsor.website}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+      )}
     </div>
   );
 }
