@@ -41,7 +41,7 @@ function Hero() {
           McMaster Exoskeleton
         </h1>
         <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-medium">
-          Empowering movement. Building the future of mobility.
+          Empowering movement.
         </p>
       </div>
     </section>
