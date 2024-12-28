@@ -160,8 +160,8 @@ function Sponsors() {
       {/* Sponsorship Package Section */}
       <div className="relative bg-gray-900 text-white py-16 px-8 overflow-hidden">
         {/* <div className="absolute inset-0">
-          <ParticlesHexagon id="sponsorship-particles" key="particles2" />
-        </div> */}
+    <ParticlesHexagon id="sponsorship-particles" key="particles2" />
+  </div> */}
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
@@ -174,41 +174,12 @@ function Sponsors() {
           </p>
 
           <button
-            onClick={toggleModal}
+            onClick={() => window.open("/sponsor_proposal.pdf", "_blank")}
             className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg transition duration-300"
           >
             View Sponsorship Package
           </button>
         </div>
-
-        {isModalOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-20">
-            <div className="bg-white text-black rounded-lg shadow-lg p-8 max-w-2xl">
-              <h2 className="text-2xl font-bold mb-4">Sponsorship Package</h2>
-              <p className="text-lg mb-6">
-                Thank you for your interest in sponsoring McMaster Exoskeleton.
-                Click the button below to download or preview our sponsorship
-                package.
-              </p>
-              <div className="flex justify-between items-center">
-                <a
-                  href="/sponsorship_package.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg transition duration-300"
-                >
-                  Open Package
-                </a>
-                <button
-                  onClick={toggleModal}
-                  className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg text-lg transition duration-300"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
 
       {/* Affiliates Section */}
