@@ -23,6 +23,14 @@ const exo_2 = Exo_2({
 export const metadata: Metadata = {
   title: "McMaster Exoskeleton",
   description: "McMaster Exoskeleton Team Website",
+  keywords: [
+    "McMaster",
+    "Exoskeleton",
+    "McMaster Exoskeleton",
+    "McMaster Team",
+    "McMcmaster Exoskeleton Team",
+    "MES",
+  ],
 };
 
 export default function RootLayout({
