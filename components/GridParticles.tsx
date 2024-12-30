@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Particles from "@tsparticles/react";
 import { MoveDirection, OutMode, tsParticles } from "@tsparticles/engine";
 
@@ -9,6 +9,7 @@ import { loadFull } from "tsparticles"; // Load all features
 
 const GridParticles = ({ id }: { id: string }) => {
   const [init, setInit] = useState(false);
+  const particlesRef = useRef<any>(null);
 
   // Initialize tsparticles engine with required features
   useEffect(() => {
@@ -32,7 +33,7 @@ const GridParticles = ({ id }: { id: string }) => {
       },
       move: {
         enable: true,
-        speed: 2, // Particle movement speed
+        speed: 3, // Particle movement speed
         direction: MoveDirection.none, // No specific movement direction
         outModes: {
           default: OutMode.out, // Particles exit screen once they move out
@@ -41,7 +42,11 @@ const GridParticles = ({ id }: { id: string }) => {
         straight: true, // Particles move straight in all directions
       },
       number: {
+        density: {
+          enable: false,
+        },
         value: 50, // Number of particles
+        limit: 50,
       },
       opacity: {
         value: 0.5, // Slight opacity
@@ -54,7 +59,7 @@ const GridParticles = ({ id }: { id: string }) => {
       },
       links: {
         color: "#192841", // Light gray color for links between particles
-        distance: 300, // Distance for linking particles
+        distance: 100, // Distance for linking particles
         enable: true,
         opacity: 1, // Fully opaque links
         width: 2, // Link width
@@ -65,7 +70,7 @@ const GridParticles = ({ id }: { id: string }) => {
         direction: MoveDirection.none,
         rate: {
           quantity: 2, // Number of particles emitted
-          delay: 0.3, // Delay between emissions
+          delay: 1, // Delay between emissions
         },
         position: {
           x: 50, // Center of the screen

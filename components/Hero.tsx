@@ -5,6 +5,7 @@ import Image from "next/image";
 import BackgroundVideo from "./BackgroundVideo";
 import CircuitParticles from "./CircuitParticles";
 import GridParticles from "./GridParticles";
+import ParticlesHexagon from "./ParticlesHexagon";
 
 function Hero() {
   const [isVideo, setVideo] = useState(false);
@@ -37,7 +38,8 @@ function Hero() {
         <BackgroundVideo></BackgroundVideo>
       </div> */}
       {/* <CircuitParticles id="circuit-home" /> */}
-      <GridParticles id="grid-home" />
+      {/* <GridParticles id="grid-home" /> */}
+      <ParticlesHexagon id="hexagon-home" />
 
       {/* Title and Tagline with Shading */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white space-y-4 px-4 py-8 bg-black bg-opacity-50 z-10">
