@@ -3,12 +3,14 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import BackgroundVideo from "./BackgroundVideo";
+import CircuitParticles from "./CircuitParticles";
+import GridParticles from "./GridParticles";
 
 function Hero() {
   const [isVideo, setVideo] = useState(false);
 
   return (
-    <section className="relative flex justify-center items-center w-fill h-auto bg-white">
+    <section className="relative flex justify-center items-center w-fill h-full bg-white z-10">
       {/* Video Background */}
       {/* <Image
         src="/hero.png"
@@ -31,9 +33,11 @@ function Hero() {
         <source src="/videos/hero_vid.mov" type="video/quicktime" />
         Your browser does not support the video tag.
       </video> */}
-      <div className="w-full h-full object-cover">
+      {/* <div className="w-full h-full object-cover">
         <BackgroundVideo></BackgroundVideo>
-      </div>
+      </div> */}
+      {/* <CircuitParticles id="circuit-home" /> */}
+      <GridParticles id="grid-home" />
 
       {/* Title and Tagline with Shading */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white space-y-4 px-4 py-8 bg-black bg-opacity-50 z-10">
