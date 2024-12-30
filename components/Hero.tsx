@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import BackgroundVideo from "./BackgroundVideo";
 import CircuitParticles from "./CircuitParticles";
-import GridParticles from "./GridParticles";
 import ParticlesHexagon from "./ParticlesHexagon";
 
 function Hero() {
@@ -38,7 +37,6 @@ function Hero() {
         <BackgroundVideo></BackgroundVideo>
       </div> */}
       {/* <CircuitParticles id="circuit-home" /> */}
-      {/* <GridParticles id="grid-home" /> */}
       <ParticlesHexagon id="hexagon-home" />
 
       {/* Title and Tagline with Shading */}
