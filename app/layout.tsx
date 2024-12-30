@@ -42,6 +42,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/exo_white_scalable.svg" />
+        <link rel="icon" href="/exo_white_scalable.ico" type="image/x-icon" />
         <title>McMaster Exoskeleton</title>
       </head>
       <body
