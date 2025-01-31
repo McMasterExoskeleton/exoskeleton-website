@@ -11,11 +11,11 @@ const FacultySupport = [
     link: "https://experts.mcmaster.ca/display/doylet",
     headshot: "/headshots/Doyle_headshot.jpg",
   },
-  {
-    name: "Dr. Shahrukh Athar",
-    link: "https://www.eng.mcmaster.ca/ece/faculty/dr-shahrukh-athar/",
-    headshot: "/headshots/Shahrukh_Athar_headshot.jpg",
-  },
+  //   {
+  //     name: "Dr. Shahrukh Athar",
+  //     link: "https://www.eng.mcmaster.ca/ece/faculty/dr-shahrukh-athar/",
+  //     headshot: "/headshots/Shahrukh_Athar_headshot.jpg",
+  //   },
 ];
 
 function Faculty() {
