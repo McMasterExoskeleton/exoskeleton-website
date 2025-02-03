@@ -11,11 +11,16 @@ const FacultySupport = [
     link: "https://experts.mcmaster.ca/display/doylet",
     headshot: "/headshots/Doyle_headshot.jpg",
   },
-  //   {
-  //     name: "Dr. Shahrukh Athar",
-  //     link: "https://www.eng.mcmaster.ca/ece/faculty/dr-shahrukh-athar/",
-  //     headshot: "/headshots/Shahrukh_Athar_headshot.jpg",
-  //   },
+  {
+    name: "Dr. Shahrukh Athar",
+    link: "https://www.eng.mcmaster.ca/ece/faculty/dr-shahrukh-athar/",
+    headshot: "/headshots/Shahrukh_Athar_headshot.jpg",
+  },
+  {
+    name: "Dr. Yaser Haddara",
+    link: "https://experts.mcmaster.ca/display/yaser",
+    headshot: "/headshots/Yaser_Haddara_headshot_cropped2.jpg",
+  },
 ];
 
 function Faculty() {
