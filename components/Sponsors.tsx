@@ -43,53 +43,28 @@ const affiliates = [
 const sponsors = {
   bronze: [
     {
-      name: "Bronze Sponsor 1",
-      logo: "/MES_logo.svg",
-      website: "https://www.macengsociety.ca/",
+      name: "East Mount Chiropractic",
+      logo: "/eastmount-chiro-logo.png",
+      website: "https://eastmountchiropractic.ca/",
     },
     {
-      name: "Bronze Sponsor 1",
-      logo: "/MES_logo.svg",
-      website: "https://www.macengsociety.ca/",
-    },
-    {
-      name: "Bronze Sponsor 1",
-      logo: "/MES_logo.svg",
-      website: "https://www.macengsociety.ca/",
+      name: "Generations Physio",
+      logo: "/generations-physio-logo.avif",
+      website: "https://www.generationsphysio.com/",
     },
   ],
   silver: [
     {
-      name: "Silver Sponsor 1",
-      logo: "/MES_logo.svg",
-      website: "https://www.macengsociety.ca/",
-    },
-    {
-      name: "Silver Sponsor 1",
-      logo: "/MES_logo.svg",
-      website: "https://www.macengsociety.ca/",
-    },
-    {
-      name: "Silver Sponsor 1",
-      logo: "/MES_logo.svg",
-      website: "https://www.macengsociety.ca/",
+      name: "Solid Works",
+      logo: "/solidworks-logo.svg",
+      website: "https://www.solidworks.com/",
     },
   ],
   gold: [
     {
-      name: "Gold Sponsor 1",
-      logo: "/MES_logo.svg",
-      website: "https://www.macengsociety.ca/",
-    },
-    {
-      name: "Gold Sponsor 1",
-      logo: "/MES_logo.svg",
-      website: "https://www.macengsociety.ca/",
-    },
-    {
-      name: "Gold Sponsor 1",
-      logo: "/MES_logo.svg",
-      website: "https://www.macengsociety.ca/",
+      name: "PCB Libraries",
+      logo: "/pcb-libraries.png",
+      website: "https://www.pcblibraries.com/",
     },
   ],
 };
@@ -125,7 +100,7 @@ const SponsorCard = ({ logo, name, website }: SponsorProps) => (
     rel="noopener noreferrer"
     className="flex items-center justify-center p-4 transition-transform duration-300 hover:scale-105"
   >
-    <div className="relative w-32 h-32">
+    <div className="relative w-40 h-40">
       <img
         src={logo}
         alt={`${name} logo`}
@@ -210,8 +185,7 @@ function Sponsors() {
       </div>
 
       {/* Sponsors Section */}
-      {/* remove false to display sponsor placeholder*/}
-      {false && (
+      {(
         <div className="relative bg-gray-900 text-white py-16 px-8 overflow-hidden">
           {/* <div className="absolute inset-0">
           <ParticlesHexagon id="sponsors-section-particles" />
