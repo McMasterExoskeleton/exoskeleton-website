@@ -66,6 +66,11 @@ const sponsors = {
       logo: "/pcb-libraries.png",
       website: "https://www.pcblibraries.com/",
     },
+    {
+      name: "EZMotion", 
+      logo: "/ezmotion-logo.png",
+      website: "https://www.ezmotion.co/"
+    },
   ],
 };
 
