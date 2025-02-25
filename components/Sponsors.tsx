@@ -67,9 +67,9 @@ const sponsors = {
       website: "https://www.pcblibraries.com/",
     },
     {
-      name: "EZMotion", 
+      name: "EZMotion",
       logo: "/ezmotion-logo.png",
-      website: "https://www.ezmotion.co/"
+      website: "https://www.ezmotion.co/",
     },
   ],
 };
@@ -190,7 +190,7 @@ function Sponsors() {
       </div>
 
       {/* Sponsors Section */}
-      {(
+      {
         <div className="relative bg-gray-700 text-white py-16 px-8 overflow-hidden">
           {/* <div className="absolute inset-0">
           <ParticlesHexagon id="sponsors-section-particles" />
@@ -204,7 +204,10 @@ function Sponsors() {
               support and dedication.
             </p>
 
-            <h3 className="text-3xl sm:text-4xl font-bold mb-6">Gold Tier</h3>
+            <h3 className="relative text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-yellow-700 bg-clip-text text-transparent after:content-['✨'] after:absolute after:top-0 after:right-2 after:animate-ping">
+              Gold Tier
+            </h3>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
               {sponsors.gold.map((sponsor) => (
                 <SponsorCard
@@ -217,7 +220,9 @@ function Sponsors() {
             </div>
 
             {/* Silver Tier */}
-            <h3 className="text-3xl sm:text-4xl font-bold mb-6">Silver Tier</h3>
+            <h3 className="text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-400 to-gray-600 bg-clip-text text-transparent">
+              Silver Tier
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 justify-center">
               {sponsors.silver.map((sponsor) => (
                 <SponsorCard
@@ -230,7 +235,9 @@ function Sponsors() {
             </div>
 
             {/* Bronze Tier */}
-            <h3 className="text-3xl sm:text-4xl font-bold mb-6">Bronze Tier</h3>
+            <h3 className="text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-orange-700 to-yellow-600 bg-clip-text text-transparent">
+              Bronze Tier
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 justify-center">
               {sponsors.bronze.map((sponsor) => (
                 <SponsorCard
@@ -243,7 +250,7 @@ function Sponsors() {
             </div>
           </div>
         </div>
-      )}
+      }
     </div>
   );
 }
