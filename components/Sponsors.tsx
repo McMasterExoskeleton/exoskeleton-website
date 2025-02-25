@@ -66,6 +66,11 @@ const sponsors = {
       logo: "/pcb-libraries.png",
       website: "https://www.pcblibraries.com/",
     },
+    {
+      name: "EZMotion", 
+      logo: "/ezmotion-logo.png",
+      website: "https://www.ezmotion.co/"
+    },
   ],
 };
 
@@ -79,7 +84,7 @@ const AffiliateCard = ({
     href={website}
     target="_blank"
     rel="noopener noreferrer"
-    className="flex flex-col items-center bg-gray-800 text-white p-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+    className="flex flex-col items-center bg-gray-700 text-white p-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
   >
     <div className="relative w-32 h-32 mb-4">
       <img
@@ -133,7 +138,7 @@ function Sponsors() {
       </div>
 
       {/* Sponsorship Package Section */}
-      <div className="relative bg-gray-900 text-white py-16 px-8 overflow-hidden">
+      <div className="relative bg-gray-700 text-white py-16 px-8 overflow-hidden">
         {/* <div className="absolute inset-0">
     <ParticlesHexagon id="sponsorship-particles" key="particles2" />
   </div> */}
@@ -158,7 +163,7 @@ function Sponsors() {
       </div>
 
       {/* Affiliates Section */}
-      <div className="relative bg-gray-800 text-white py-16 px-8 overflow-hidden">
+      <div className="relative bg-gray-700 text-white py-16 px-8 overflow-hidden">
         {/* <div className="absolute inset-0">
           <ParticlesHexagon id="affiliates-particles" key="3" />
         </div> */}
@@ -186,7 +191,7 @@ function Sponsors() {
 
       {/* Sponsors Section */}
       {(
-        <div className="relative bg-gray-900 text-white py-16 px-8 overflow-hidden">
+        <div className="relative bg-gray-700 text-white py-16 px-8 overflow-hidden">
           {/* <div className="absolute inset-0">
           <ParticlesHexagon id="sponsors-section-particles" />
         </div> */}
