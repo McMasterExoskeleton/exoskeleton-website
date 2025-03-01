@@ -84,7 +84,7 @@ const AffiliateCard = ({
     href={website}
     target="_blank"
     rel="noopener noreferrer"
-    className="flex flex-col items-center bg-gray-700 text-white p-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+    className="flex flex-col items-center bg-gray-800 text-white p-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
   >
     <div className="relative w-32 h-32 mb-4">
       <img
@@ -105,7 +105,8 @@ const SponsorCard = ({ logo, name, website }: SponsorProps) => (
     rel="noopener noreferrer"
     className="flex items-center justify-center p-4 transition-transform duration-300 hover:scale-105"
   >
-    <div className="relative w-40 h-40">
+    <div className="relative w-60 h-40 flex items-center justify-center p-2">
+      <div className="absolute inset-0 rounded-xl" />
       <img
         src={logo}
         alt={`${name} logo`}
@@ -138,7 +139,7 @@ function Sponsors() {
       </div>
 
       {/* Sponsorship Package Section */}
-      <div className="relative bg-gray-700 text-white py-16 px-8 overflow-hidden">
+      <div className="relative bg-gray-800 text-white py-16 px-8 overflow-hidden">
         {/* <div className="absolute inset-0">
     <ParticlesHexagon id="sponsorship-particles" key="particles2" />
   </div> */}
@@ -191,7 +192,7 @@ function Sponsors() {
 
       {/* Sponsors Section */}
       {
-        <div className="relative bg-gray-700 text-white py-16 px-8 overflow-hidden">
+        <div className="relative bg-gray-800 text-white py-16 px-8 overflow-hidden">
           {/* <div className="absolute inset-0">
           <ParticlesHexagon id="sponsors-section-particles" />
         </div> */}
@@ -204,49 +205,55 @@ function Sponsors() {
               support and dedication.
             </p>
 
-            <h3 className="relative text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-yellow-700 bg-clip-text text-transparent after:content-['✨'] after:absolute after:top-0 after:right-2 after:animate-ping">
-              Gold Tier
-            </h3>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-              {sponsors.gold.map((sponsor) => (
-                <SponsorCard
-                  key={sponsor.name}
-                  logo={sponsor.logo}
-                  name={sponsor.name}
-                  website={sponsor.website}
-                />
-              ))}
+            {/* Gold Tier */}
+            <div className="relative bg-gray-700 p-8 rounded-xl shadow-lg mb-16">
+              <h3 className="relative text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-yellow-700 bg-clip-text text-transparent after:content-['✨'] after:absolute after:top-0 after:right-2 after:animate-ping">
+                Gold Tier
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                {sponsors.gold.map((sponsor) => (
+                  <SponsorCard
+                    key={sponsor.name}
+                    logo={sponsor.logo}
+                    name={sponsor.name}
+                    website={sponsor.website}
+                  />
+                ))}
+              </div>
             </div>
 
             {/* Silver Tier */}
-            <h3 className="text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-400 to-gray-600 bg-clip-text text-transparent">
-              Silver Tier
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 justify-center">
-              {sponsors.silver.map((sponsor) => (
-                <SponsorCard
-                  key={sponsor.name}
-                  logo={sponsor.logo}
-                  name={sponsor.name}
-                  website={sponsor.website}
-                />
-              ))}
+            <div className="relative bg-gray-700 p-8 rounded-xl shadow-lg mb-16">
+              <h3 className="text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-400 to-gray-600 bg-clip-text text-transparent">
+                Silver Tier
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                {sponsors.silver.map((sponsor) => (
+                  <SponsorCard
+                    key={sponsor.name}
+                    logo={sponsor.logo}
+                    name={sponsor.name}
+                    website={sponsor.website}
+                  />
+                ))}
+              </div>
             </div>
 
             {/* Bronze Tier */}
-            <h3 className="text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-orange-700 to-yellow-600 bg-clip-text text-transparent">
-              Bronze Tier
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 justify-center">
-              {sponsors.bronze.map((sponsor) => (
-                <SponsorCard
-                  key={sponsor.name}
-                  logo={sponsor.logo}
-                  name={sponsor.name}
-                  website={sponsor.website}
-                />
-              ))}
+            <div className="relative bg-gray-700 p-8 rounded-xl shadow-lg">
+              <h3 className="text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-orange-700 to-yellow-600 bg-clip-text text-transparent">
+                Bronze Tier
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                {sponsors.bronze.map((sponsor) => (
+                  <SponsorCard
+                    key={sponsor.name}
+                    logo={sponsor.logo}
+                    name={sponsor.name}
+                    website={sponsor.website}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
