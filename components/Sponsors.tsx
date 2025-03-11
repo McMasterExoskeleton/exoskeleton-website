@@ -59,6 +59,11 @@ const sponsors = {
       logo: "/solidworks-logo.svg",
       website: "https://www.solidworks.com/",
     },
+    {
+      name: "MG Chemicals",
+      logo: "/mg-chemicals-logo.webp",
+      website: "https://mgchemicals.com/",
+    },
   ],
   gold: [
     {
@@ -70,6 +75,11 @@ const sponsors = {
       name: "EZMotion",
       logo: "/ezmotion-logo.png",
       website: "https://www.ezmotion.co/",
+    },
+    {
+      name: "KISSsoft",
+      logo: "/kisssoft-logo.svg",
+      website: "https://www.kisssoft.com/en",
     },
   ],
 };
