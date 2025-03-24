@@ -52,6 +52,11 @@ const sponsors = {
       logo: "/generations-physio-logo.avif",
       website: "https://www.generationsphysio.com/",
     },
+    {
+      name: "Aegis Batteries",
+      logo: "/Aegis Batteries.jpg",
+      website: "https://www.aegisbattery.com/",
+    },
   ],
   silver: [
     {
