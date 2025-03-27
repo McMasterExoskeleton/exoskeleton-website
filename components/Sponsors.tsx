@@ -16,6 +16,13 @@ type SponsorProps = {
   website: string;
 };
 
+type SpecialThanksProps = {
+  name: string;
+  role: string;
+  website: string;
+};
+
+
 const affiliates = [
   {
     name: "McMaster Engineering Society",
@@ -24,20 +31,6 @@ const affiliates = [
       "The McMaster Engineering Society fosters collaboration and innovation within the engineering community.",
     website: "https://www.macengsociety.ca/",
   },
-  // {
-  //   name: "McMaster Engineering Society",
-  //   logo: "/MES_logo.svg",
-  //   description:
-  //     "The McMaster Engineering Society fosters collaboration and innovation within the engineering community.",
-  //   website: "https://www.macengsociety.ca/",
-  // },
-  // {
-  //   name: "McMaster Engineering Society",
-  //   logo: "/MES_logo.svg",
-  //   description:
-  //     "The McMaster Engineering Society fosters collaboration and innovation within the engineering community.",
-  //   website: "https://www.macengsociety.ca/",
-  // },
 ];
 
 const sponsors = {
@@ -69,6 +62,11 @@ const sponsors = {
       logo: "/mg-chemicals-logo.webp",
       website: "https://mgchemicals.com/",
     },
+    {
+      name: "McMaster Engineering Society",
+      logo: "/MES_logo.svg",
+      website: "https://www.macengsociety.ca/",
+    },
   ],
   gold: [
     {
@@ -88,6 +86,14 @@ const sponsors = {
     },
   ],
 };
+
+const specialThanks = [
+  {
+    name: "Luke Schuurman",
+    role: "Head of Lettuce",
+    website: "https://www.linkedin.com/in/luke-schuurman/?originalSubdomain=ca",
+  },
+];
 
 const AffiliateCard = ({
   logo,
@@ -127,6 +133,19 @@ const SponsorCard = ({ logo, name, website }: SponsorProps) => (
         alt={`${name} logo`}
         className="w-full h-full object-contain hover:opacity-80"
       />
+    </div>
+  </a>
+);
+
+const SpecialThanksCard = ({ name, role, website }: SpecialThanksProps) => (
+  <a
+    href={website}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <div className="bg-gray-800 p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+      <p className="text-xl font-bold">{name}</p>
+      <p className="text-sm text-gray-300">{role}</p>
     </div>
   </a>
 );
@@ -266,6 +285,22 @@ function Sponsors() {
                     logo={sponsor.logo}
                     name={sponsor.name}
                     website={sponsor.website}
+                  />
+                ))}
+              </div>
+            </div>
+            {/* Special Thanks Section */}
+            <div className="relative bg-gray-700 p-8 rounded-xl shadow-lg mt-16">
+              <h3 className="text-3xl sm:text-4xl font-bold mb-6">
+                Special Thanks
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                {specialThanks.map((thank) => (
+                  <SpecialThanksCard
+                    key={thank.name}
+                    name={thank.name}
+                    role={thank.role}
+                    website={thank.website}
                   />
                 ))}
               </div>
