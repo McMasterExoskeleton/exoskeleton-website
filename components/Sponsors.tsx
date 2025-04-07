@@ -84,6 +84,16 @@ const sponsors = {
       logo: "/kisssoft-logo.svg",
       website: "https://www.kisssoft.com/en",
     },
+    {
+      name: "RLX Solutions",
+      logo: "/rlx_logo.png",
+      website: "https://rlxsolutions.com/",
+    },
+    {
+      name: "3JPrecision",
+      logo: "/3JPrecision_logo.png",
+      website: "https://www.3jprecision.com/",
+    },
   ],
 };
 
