@@ -22,7 +22,6 @@ type SpecialThanksProps = {
   website: string;
 };
 
-
 const affiliates = [
   {
     name: "McMaster Engineering Society",
@@ -49,6 +48,11 @@ const sponsors = {
       name: "Aegis Batteries",
       logo: "/Aegis Batteries.jpg",
       website: "https://www.aegisbattery.com/",
+    },
+    {
+      name: "Protocase",
+      logo: "/protocase.png",
+      website: "https://www.protocase.com/",
     },
   ],
   silver: [
@@ -148,11 +152,7 @@ const SponsorCard = ({ logo, name, website }: SponsorProps) => (
 );
 
 const SpecialThanksCard = ({ name, role, website }: SpecialThanksProps) => (
-  <a
-    href={website}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
+  <a href={website} target="_blank" rel="noopener noreferrer">
     <div className="bg-gray-800 p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
       <p className="text-xl font-bold">{name}</p>
       <p className="text-sm text-gray-300">{role}</p>
