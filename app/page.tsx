@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <>
       <Hero></Hero>
-      <PoweredBy />
       <About></About>
       <Competition></Competition>
+      <PoweredBy />
     </>
   );
 }

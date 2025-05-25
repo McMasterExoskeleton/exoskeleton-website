@@ -3,13 +3,19 @@ import { SponsorCard } from "./Sponsors";
 import { sponsors, SponsorProps } from "@/data/sponsorsData"; // Import data and types from the new data file
 
 const PoweredBy = () => {
-  const desiredSponsorNames = ["EZMotion", "RLX Solutions", "3JPrecision", "PCB Libraries", "KISSsoft"];
+  const desiredSponsorNames = [
+    "EZMotion",
+    "RLX Solutions",
+    "3JPrecision",
+    "PCB Libraries",
+    "KISSsoft",
+  ];
   const topSponsors = sponsors.gold.filter((sponsor) =>
     desiredSponsorNames.includes(sponsor.name)
   );
 
   return (
-    <section className="py-12 bg-jet text-white text-center">
+    <section className="py-12 bg-charcoal text-white text-center">
       <h2 className="text-5xl font-bold mb-4">
         Powered By
         <span className="block w-64 h-1 bg-ashGold mx-auto mt-2"></span>
@@ -23,4 +29,4 @@ const PoweredBy = () => {
   );
 };
 
-export default PoweredBy; 
+export default PoweredBy;
