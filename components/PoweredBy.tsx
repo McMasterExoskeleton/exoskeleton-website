@@ -9,7 +9,7 @@ const PoweredBy = () => {
   );
 
   return (
-    <section className="py-12 bg-black text-white text-center">
+    <section className="py-12 bg-jet text-white text-center">
       <h2 className="text-5xl font-bold mb-4">
         Powered By
         <span className="block w-64 h-1 bg-ashGold mx-auto mt-2"></span>
