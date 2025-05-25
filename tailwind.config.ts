@@ -11,6 +11,16 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        jet: '#0D0D0D',
+        charcoal: '#1C1C1E',
+        softWhite: '#F5F5F5',
+        mutedGray: '#D4D4D4',
+
+        mutedBlue: '#5DADE2',
+        slateCyan: '#7FBEC8',
+        dustyRose: '#B97C8F',
+        ashGold: '#BDA968',
+        steelRed: '#A14E4E'
       },
       animation: {
         fadeIn: "fadeIn 1s ease-out",
