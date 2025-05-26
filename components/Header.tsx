@@ -29,13 +29,20 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden font-semibold text-softWhite md:flex md:space-x-8 font-exo-2 text-[24px] md:text-xl lg:text-xl">
-            <Link href="/sponsors" className="relative group px-3 py-2">
-              <span>Sponsors</span>
+            <Link href="/recruiting" className="relative group px-3 py-2">
+              <span>Join the Team</span>
               <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
             </Link>
-
+            <Link href="/ace" className="relative group px-3 py-2">
+              <span>ACE 2025</span>
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
+            </Link>
             <Link href="/team" className="relative group px-3 py-2">
               <span>Team</span>
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
+            </Link>
+            <Link href="/sponsors" className="relative group px-3 py-2">
+              <span>Sponsors</span>
               <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
             </Link>
 
@@ -75,6 +82,22 @@ export default function Header() {
       >
         <nav className="md:hidden bg-jet shadow-sm">
           <div className="space-y-1 px-4 pt-4 pb-6 text-softWhite font-exo-2 text-lg">
+            <Link
+              href="/recruiting"
+              onClick={toggleMenu}
+              className="relative block group py-2"
+            >
+              <span>Join the Team</span>
+              <span className="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
+            </Link>
+            <Link
+              href="/ace"
+              onClick={toggleMenu}
+              className="relative block group py-2"
+            >
+              <span>ACE 2025</span>
+              <span className="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
+            </Link>
             <Link
               href="/sponsors"
               onClick={toggleMenu}
