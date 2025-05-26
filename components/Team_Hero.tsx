@@ -1,22 +1,24 @@
 import React from "react";
-import ParticlesHexagon from "./ParticlesHexagon";
-import ParticlesBackground from "./ParticlesBackground";
 
 function Team_Hero() {
   return (
-    <div className="relative bg-black text-white z-10 py-10 min-h-[500px] flex items-center justify-center">
-      <ParticlesHexagon id="applications"></ParticlesHexagon>
-      {/* <ParticlesBackground id="apps2"></ParticlesBackground> */}
-      {/* <ParticlesTest id="testing"></ParticlesTest> */}
-      <div className="relative wrapper w-fill h-fill z-20">
+    <div
+      className="relative text-softWhite py-10 min-h-[700px] flex items-center justify-center bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/team/obstacle_course.jpg')" }}
+    >
+      {/* Black overlay for readability */}
+      <div className="absolute inset-0 bg-black bg-opacity-60 z-10" />
+
+      {/* Content */}
+      <div className="relative z-20 w-full px-4">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-            Join McMaster Exoskeleton
+            We Are Recruiting! Join McMaster Exoskeleton
           </h1>
           <p className="text-lg sm:text-2xl mb-6">
             Are you passionate about robotics, biomechanics, and making a
             real-world impact? Our team could be the right one for you! Follow
-            our
+            our{" "}
             <a
               href="https://www.instagram.com/mcmasterexo/"
               target="_blank"
@@ -25,7 +27,7 @@ function Team_Hero() {
             >
               Instagram
             </a>{" "}
-            for announcements about applications
+            for announcements about applications opening in the Fall Semester!.
           </p>
           <p className="text-lg sm:text-2xl mb-8">
             As part of our team you will get practical, hands-on experience by

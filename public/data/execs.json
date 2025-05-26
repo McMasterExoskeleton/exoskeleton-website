@@ -1,7 +1,7 @@
 [
-    {"name":"Umar Khan", "title":"Software Director", "linkedin_url": "https://www.linkedin.com/in/muhammadumar-khan/", "image_url":"/headshots/Umar.png"},
-    {"name":"Dylan Garner", "title":"Software Director", "linkedin_url": "https://www.linkedin.com/in/dylan-garner03", "image_url":"/headshots/dylan_headshot.png"},
     {"name": "Vineet Aggarwal", "title":"Team Principal", "linkedin_url": "https://www.linkedin.com/in/aggarwal-vineet/", "image_url":"/headshots/Vineet.png"},
+    {"name":"Umar Khan", "title":"Software Director", "linkedin_url": "https://www.linkedin.com/in/muhammadumar-khan/", "image_url":"/headshots/Umar.png"},
+    {"name":"Dylan Garner", "title":"Software Director", "linkedin_url": "https://www.linkedin.com/in/dylan-garner03", "image_url":"/headshots/dylan_headshot.png"},   
     {"name":"Dakota D'Souza", "title":"Electrical Director", "linkedin_url": "https://www.linkedin.com/in/dakota-dsouza/", "image_url":"/headshots/Dakota.png"},
     {"name":"Jessica Anziano", "title":"Electrical Director", "linkedin_url": "https://www.linkedin.com/in/jessanziano/", "image_url":"/headshots/Jess.png"},
     {"name":"Sophia Mokhtari", "title":"Safety Director", "linkedin_url": "https://www.linkedin.com/in/sophiamokhtari/", "image_url":"/headshots/Sophia.png"},

@@ -5,9 +5,12 @@ import { HeadshotProps } from "./Headshot";
 
 function TeamLeads() {
   return (
-    <div className="relative mt-8 p-4">
+    <div className="relative p-4 text-softWhite bg-charcoal">
       {/* Title */}
-      <h2 className="text-5xl font-bold text-center mb-6">Team Leads</h2>
+      <h2 className="text-5xl font-bold text-center mb-6">
+        Team Leads
+        <span className="block w-64 h-1 bg-ashGold mx-auto mt-2"></span>
+      </h2>
 
       {/* Flex container for the headshots */}
       <div className="flex flex-wrap justify-center gap-6">
