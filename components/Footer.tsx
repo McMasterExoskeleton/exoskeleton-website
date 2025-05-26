@@ -7,8 +7,8 @@ import ParticlesBackground from "./ParticlesBackground";
 function Footer() {
   return (
     <footer className="relative bg-black text-white py-8 z-10">
-      {/* Particles Background */}
-      <ParticlesBackground id="footer-particles" />
+      {/* Particles Background - REMOVED */}
+      {/* <ParticlesBackground id="footer-particles" /> */}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20 py-8">
         {/* Email Section */}
@@ -16,9 +16,10 @@ function Footer() {
           Email us at:{" "}
           <a
             href="mailto:exo@mcmaster.ca"
-            className="text-blue-400 hover:underline"
+            className="relative group text-ashGold hover:text-ashGold"
           >
             exo@mcmaster.ca
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-ashGold transition-all duration-300 ease-out group-hover:w-full"></span>
           </a>
         </p>
 
@@ -29,10 +30,13 @@ function Footer() {
             href="https://www.instagram.com/mcmasterexo/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white flex items-center space-x2"
+            className="relative group text-gray-400 hover:text-ashGold flex items-center space-x2"
           >
             <FaInstagram size={24} />
-            <span className="ml-1">@mcmasterexo</span>
+            <span className="ml-1">
+              @mcmasterexo
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-ashGold transition-all duration-300 ease-out group-hover:w-full"></span>
+            </span>
           </a>
 
           {/* LinkedIn Icon */}
@@ -40,10 +44,13 @@ function Footer() {
             href="https://www.linkedin.com/company/mcmasterexo/?originalSubdomain=ca"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white flex"
+            className="relative group text-gray-400 hover:text-ashGold flex items-center"
           >
             <FaLinkedin size={24} />
-            <span>McMaster Exoskeleton</span>
+            <span className="ml-1">
+              McMaster Exoskeleton
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-ashGold transition-all duration-300 ease-out group-hover:w-full"></span>
+            </span>
           </a>
         </div>
 
