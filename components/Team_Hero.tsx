@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 function Team_Hero() {
   return (
@@ -17,22 +18,30 @@ function Team_Hero() {
           </h1>
           <p className="text-lg sm:text-2xl mb-6">
             Are you passionate about robotics, biomechanics, and making a
-            real-world impact? Our team could be the right one for you! Follow
-            our{" "}
+            real-world impact? Our team could be the right one for you!
+          </p>
+          <p className="text-lg sm:text-2xl mb-4">
+            As part of our team you will get practical, hands-on experience by
+            actively contributing to the design, development, and testing of
+            cutting-edge technology in the field of robotics.
+          </p>
+          <p className="text-lg sm:text-2xl mb-8">
+            Check{" "}
+            <Link href="/recruiting" className="relative group px-1">
+              <span className="text-gray-500">here</span>
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
+            </Link>{" "}
+            for more information on applications, or follow our{" "}
             <a
               href="https://www.instagram.com/mcmasterexo/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-400 p-1"
+              className="relative group px-1 text-blue-400"
             >
-              Instagram
+              <span className="text-gray-500">Instagram</span>
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
             </a>{" "}
-            for announcements about applications opening in the Fall Semester!.
-          </p>
-          <p className="text-lg sm:text-2xl mb-8">
-            As part of our team you will get practical, hands-on experience by
-            actively contributing to the design, development, and testing of
-            cutting-edge technology in the field of robotics.
+            for regular updates.
           </p>
         </div>
       </div>
