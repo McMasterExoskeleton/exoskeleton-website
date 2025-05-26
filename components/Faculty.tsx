@@ -25,8 +25,11 @@ const FacultySupport = [
 
 function Faculty() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-800 text-white py-12">
-      <h1 className="text-5xl font-bold mb-12 text-center">Faculty Support</h1>
+    <div className="min-h-screen flex flex-col bg-jet text-softWhite py-12">
+      <h1 className="text-5xl font-bold mb-12 text-center">
+        Faculty Support
+        <span className="block w-64 h-1 bg-ashGold mx-auto mt-2"></span>
+      </h1>
       <h3 className="text-xl font-bold mb-12 text-center max-w-1/2 mx-auto">
         We are deeply grateful to the McMaster Faculty members who have
         generously offered their mentorship and support to our team.
@@ -36,12 +39,12 @@ function Faculty() {
         {FacultySupport.map((faculty, index) => (
           <div
             key={index}
-            className="bg-gray-700 p-6 rounded-lg w-full flex items-center space-x-6"
+            className="bg-charcoal p-6 rounded-lg w-full flex items-center space-x-6"
           >
             <img
               src={faculty.headshot}
               alt={faculty.name}
-              className="w-24 h-24 rounded-full object-cover"
+              className="w-24 h-24 rounded-full object-cover border-4 border-ashGold"
             />
             <div className="flex flex-col">
               <h2 className="text-2xl font-semibold">{faculty.name}</h2>
