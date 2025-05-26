@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
     <header className="bg-jet shadow-sm sticky top-0 z-50">
-      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-full mx-auto px-2 sm:px-2 lg:px-3">
         <div className="flex justify-between items-center py-1">
           {/* Logo */}
           <div className="flex-shrink-0">
