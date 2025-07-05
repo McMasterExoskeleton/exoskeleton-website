@@ -32,13 +32,13 @@ function Competition() {
   return (
     <section
       id="competition-section"
-      className={`py-16 px-4 sm:px-6 lg:px-8 bg-gray-900 transition-all duration-1000 ${
+      className={`py-16 px-4 sm:px-6 lg:px-8 bg-jet transition-all duration-1000 ${
         isVisible ? "opacity-100 animate-fadeIn" : "opacity-0"
       }`}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Left Column */}
-        <div>
+        <div className="border-r-4 border-ashGold rounded-lg overflow-hidden pr-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-300 mb-4">
             ACE (Applied Collegiate Exoskeleton) Competition
           </h2>
@@ -52,9 +52,9 @@ function Competition() {
         </div>
 
         {/* Right Column */}
-        <div className="flex justify-center">
+        <div className="flex justify-center border-4 border-ashGold rounded-lg overflow-hidden">
           <img
-            src="/ACE.jpg"
+            src="/team/pilots.png"
             alt="ACE Competition"
             className={`rounded-lg shadow-lg max-w-full h-auto transition-opacity duration-1000 ${
               isVisible ? " opacity-100 animate-fadeIn" : "opacity-0"
