@@ -120,12 +120,10 @@ const TEAM_DETAILS: Record<
   },
 };
 
-export default function DesignDetailPage({
-  params,
-}: {
-  params: { slug: string };
+export default async function DesignDetailPage(props: {
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await props.params;
   const team = TEAM_DETAILS[slug];
 
   if (!team) {
