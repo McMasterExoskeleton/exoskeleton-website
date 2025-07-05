@@ -41,6 +41,10 @@ export default function Header() {
               <span>Team</span>
               <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
             </Link>
+            <Link href="/design" className="relative group px-3 py-2">
+              <span>Design</span>
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
+            </Link>
             <Link href="/sponsors" className="relative group px-3 py-2">
               <span>Sponsors</span>
               <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
@@ -99,20 +103,27 @@ export default function Header() {
               <span className="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
             </Link>
             <Link
-              href="/sponsors"
-              onClick={toggleMenu}
-              className="relative block group py-2"
-            >
-              <span>Sponsors</span>
-              <span className="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
-            </Link>
-
-            <Link
               href="/team"
               onClick={toggleMenu}
               className="relative block group py-2"
             >
               <span>Team</span>
+              <span className="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
+            </Link>
+            <Link
+              href="/design"
+              onClick={toggleMenu}
+              className="relative block group py-2"
+            >
+              <span>Design</span>
+              <span className="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
+            </Link>
+            <Link
+              href="/sponsors"
+              onClick={toggleMenu}
+              className="relative block group py-2"
+            >
+              <span>Sponsors</span>
               <span className="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
             </Link>
 

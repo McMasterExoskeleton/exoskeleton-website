@@ -7,6 +7,7 @@ import {
   FaChartLine,
   FaShieldAlt,
 } from "react-icons/fa";
+import { APPLICATIONS_OPEN, APPLICATION_FORM_LINK } from "./constants";
 
 const SUBTEAMS = [
   {
@@ -41,13 +42,6 @@ const SUBTEAMS = [
       "Lead outreach, sponsorship, finance, and team operations to keep us moving forward.",
     image: "/images/business-placeholder.png",
   },
-  {
-    name: "Safety",
-    slug: "safety",
-    icon: <FaShieldAlt size={40} className="text-dustyRose" />,
-    description:
-      "Ensure safe practices, risk assessment, and the well-being of all team members during design, build, and testing.",
-  },
 ];
 
 function RecruitingPage() {
@@ -80,14 +74,23 @@ function RecruitingPage() {
         ))}
       </div>
       <div className="flex justify-center">
-        <a
-          href="https://forms.gle/placeholder-link"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-ashGold text-charcoal font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-yellow-400 transition-colors text-xl"
-        >
-          Apply Now
-        </a>
+        {APPLICATIONS_OPEN ? (
+          <a
+            href={APPLICATION_FORM_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-ashGold text-charcoal font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-yellow-400 transition-colors text-xl"
+          >
+            Apply Now
+          </a>
+        ) : (
+          <button
+            disabled
+            className="bg-gray-500 text-gray-300 font-bold px-8 py-4 rounded-lg shadow-lg text-xl cursor-not-allowed"
+          >
+            Applications Opening Soon
+          </button>
+        )}
       </div>
     </div>
   );

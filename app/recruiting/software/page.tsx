@@ -1,4 +1,5 @@
 import React from "react";
+import { APPLICATIONS_OPEN, APPLICATION_FORM_LINK } from "../constants";
 
 export default function SoftwarePage() {
   return (
@@ -27,21 +28,30 @@ export default function SoftwarePage() {
       <div className="w-full max-w-xl bg-black bg-opacity-60 rounded-lg p-8 mt-4">
         <h2 className="text-3xl font-semibold text-mutedBlue mb-4">Roles</h2>
         <ul className="list-disc list-inside text-left text-xl text-softWhite">
-          <li>Embedded Software Member</li>
-          <li>ML/AI Member</li>
-          <li>Control Systems / Algorithm Member</li>
-          <li>Exoskeleton Monitoring Member (Full-Stack)</li>
+          <li>Embedded Software </li>
+          <li>ML/AI Team</li>
+          <li>Control Systems / Exoskeleton Algorithm</li>
+          <li>Exoskeleton Monitoring(Full-Stack)</li>
         </ul>
       </div>
       <div className="flex justify-center mt-12">
-        <a
-          href="https://forms.gle/placeholder-link"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-ashGold text-charcoal font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-yellow-400 transition-colors text-xl"
-        >
-          Apply Now
-        </a>
+        {APPLICATIONS_OPEN ? (
+          <a
+            href={APPLICATION_FORM_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-ashGold text-charcoal font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-yellow-400 transition-colors text-xl"
+          >
+            Apply Now
+          </a>
+        ) : (
+          <button
+            disabled
+            className="bg-gray-500 text-gray-300 font-bold px-8 py-4 rounded-lg shadow-lg text-xl cursor-not-allowed"
+          >
+            Applications Opening Soon
+          </button>
+        )}
       </div>
     </div>
   );
