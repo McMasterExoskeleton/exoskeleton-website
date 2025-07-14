@@ -1,5 +1,10 @@
 import React from "react";
-import { APPLICATIONS_OPEN, APPLICATION_FORM_LINK } from "../constants";
+import {
+  APPLICATIONS_OPEN,
+  APPLICATION_FORM_LINK,
+  BUSINESS_APPLICATIONS_OPEN,
+  BUSINESS_APPLICATION_FORM_LINK,
+} from "../constants";
 
 export default function BusinessPage() {
   return (
@@ -53,9 +58,9 @@ export default function BusinessPage() {
         </ul>
       </div>
       <div className="flex justify-center mt-12">
-        {APPLICATIONS_OPEN ? (
+        {BUSINESS_APPLICATIONS_OPEN ? (
           <a
-            href={APPLICATION_FORM_LINK}
+            href={BUSINESS_APPLICATION_FORM_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-ashGold text-charcoal font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-yellow-400 transition-colors text-xl"
