@@ -4,6 +4,7 @@ import { Exo_2 } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import BusinessApplicationPopup from "@/components/BusinessApplicationPopup";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -48,6 +49,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${exo_2.className} antialiased`}
       >
+        <BusinessApplicationPopup />
         <Header />
         {children}
         <Footer />

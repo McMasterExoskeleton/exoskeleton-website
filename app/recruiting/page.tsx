@@ -7,7 +7,11 @@ import {
   FaChartLine,
   FaShieldAlt,
 } from "react-icons/fa";
-import { APPLICATIONS_OPEN, APPLICATION_FORM_LINK } from "./constants";
+import {
+  APPLICATIONS_OPEN,
+  APPLICATION_FORM_LINK,
+  BUSINESS_APPLICATION_FORM_LINK,
+} from "./constants";
 
 const SUBTEAMS = [
   {
@@ -74,23 +78,14 @@ function RecruitingPage() {
         ))}
       </div>
       <div className="flex justify-center">
-        {APPLICATIONS_OPEN ? (
-          <a
-            href={APPLICATION_FORM_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-ashGold text-charcoal font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-yellow-400 transition-colors text-xl"
-          >
-            Apply Now
-          </a>
-        ) : (
-          <button
-            disabled
-            className="bg-gray-500 text-gray-300 font-bold px-8 py-4 rounded-lg shadow-lg text-xl cursor-not-allowed"
-          >
-            Applications Opening Soon
-          </button>
-        )}
+        <a
+          href={BUSINESS_APPLICATION_FORM_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-ashGold text-charcoal font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-yellow-400 transition-colors text-xl"
+        >
+          Business Applications Open Now
+        </a>
       </div>
     </div>
   );
