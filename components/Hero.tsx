@@ -10,7 +10,7 @@ function Hero() {
     <section className="relative flex justify-center items-center w-full h-screen bg-white z-10 overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/team/team_photo.jpg"
+        src="/team/team_photo.png"
         alt="Team Background"
         fill
         priority
