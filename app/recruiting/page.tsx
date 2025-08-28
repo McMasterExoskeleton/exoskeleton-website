@@ -79,12 +79,12 @@ function RecruitingPage() {
       </div>
       <div className="flex justify-center">
         <a
-          href={BUSINESS_APPLICATION_FORM_LINK}
+          href={APPLICATION_FORM_LINK}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-ashGold text-charcoal font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-yellow-400 transition-colors text-xl"
         >
-          Business Applications Open Now
+          All Team Applications Open Now
         </a>
       </div>
     </div>

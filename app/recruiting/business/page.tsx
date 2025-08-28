@@ -58,9 +58,9 @@ export default function BusinessPage() {
         </ul>
       </div>
       <div className="flex justify-center mt-12">
-        {BUSINESS_APPLICATIONS_OPEN ? (
+        {APPLICATIONS_OPEN ? (
           <a
-            href={BUSINESS_APPLICATION_FORM_LINK}
+            href={APPLICATION_FORM_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-ashGold text-charcoal font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-yellow-400 transition-colors text-xl"

@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-const BUSINESS_APPLICATION_FORM_LINK =
-  "https://docs.google.com/forms/d/e/1FAIpQLScRDi0qjNFqcLJSX_6apHcWpduY_K5LZtMHkUO3akSFjOAkwg/viewform";
+const APPLICATION_FORM_LINK =
+  "https://docs.google.com/forms/d/e/1FAIpQLScusGSMxzzrLkqfulaDiVN1ZMnlqVpBoLUb2LuRYpeoR4FdWA/viewform?usp=dialog";
 
 export default function BusinessApplicationPopup() {
   const [show, setShow] = useState(false);
@@ -11,7 +11,7 @@ export default function BusinessApplicationPopup() {
     // Only show once per session
     if (
       typeof window !== "undefined" &&
-      !sessionStorage.getItem("businessAppPopupDismissed")
+      !sessionStorage.getItem("applicationPopupDismissed")
     ) {
       setShow(true);
     }
@@ -20,7 +20,7 @@ export default function BusinessApplicationPopup() {
   const handleClose = () => {
     setShow(false);
     if (typeof window !== "undefined") {
-      sessionStorage.setItem("businessAppPopupDismissed", "true");
+      sessionStorage.setItem("applicationPopupDismissed", "true");
     }
   };
 
@@ -30,10 +30,10 @@ export default function BusinessApplicationPopup() {
     <div className="fixed top-0 left-0 w-full z-[1000] flex justify-center items-start">
       <div className="bg-ashGold text-charcoal shadow-lg rounded-b-lg px-6 py-4 mt-2 flex items-center gap-4 max-w-xl w-full mx-2 animate-slideDown">
         <span className="font-bold text-lg sm:text-xl">
-          Business Team Applications are OPEN!
+          All Team Applications are OPEN!
         </span>
         <a
-          href={BUSINESS_APPLICATION_FORM_LINK}
+          href={APPLICATION_FORM_LINK}
           target="_blank"
           rel="noopener noreferrer"
           className="ml-4 bg-charcoal text-ashGold px-4 py-2 rounded-lg font-semibold shadow hover:bg-black transition-colors text-base sm:text-lg"
