@@ -14,24 +14,18 @@ function Team_Hero() {
       <div className="relative z-20 w-full px-4">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-            We Are Recruiting! Join McMaster Exoskeleton
+            Meet the McMaster Exoskeleton Team
           </h1>
           <p className="text-lg sm:text-2xl mb-6">
-            Are you passionate about robotics, biomechanics, and making a
-            real-world impact? Our team could be the right one for you!
+            We are passionate about robotics, biomechanics, and making a
+            real-world impact through cutting-edge technology.
           </p>
           <p className="text-lg sm:text-2xl mb-4">
-            As part of our team you will get practical, hands-on experience by
-            actively contributing to the design, development, and testing of
-            cutting-edge technology in the field of robotics.
+            Our team works together to design, develop, and test
+            innovative technology in the field of robotics and assistive devices.
           </p>
           <p className="text-lg sm:text-2xl mb-8">
-            Check{" "}
-            <Link href="/recruiting" className="relative group px-1">
-              <span className="text-gray-500">here</span>
-              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
-            </Link>{" "}
-            for more information on applications, or follow our{" "}
+            Follow our{" "}
             <a
               href="https://www.instagram.com/mcmasterexo/"
               target="_blank"
@@ -41,7 +35,7 @@ function Team_Hero() {
               <span className="text-gray-500">Instagram</span>
               <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-ashGold transition-all duration-300 group-hover:w-full" />
             </a>{" "}
-            for regular updates.
+            for regular updates on our projects and achievements.
           </p>
         </div>
       </div>

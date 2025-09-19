@@ -10,7 +10,6 @@ import {
 import {
   APPLICATIONS_OPEN,
   APPLICATION_FORM_LINK,
-  BUSINESS_APPLICATION_FORM_LINK,
 } from "./constants";
 
 const SUBTEAMS = [
@@ -78,14 +77,9 @@ function RecruitingPage() {
         ))}
       </div>
       <div className="flex justify-center">
-        <a
-          href={APPLICATION_FORM_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-ashGold text-charcoal font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-yellow-400 transition-colors text-xl"
-        >
-          All Team Applications Open Now
-        </a>
+        <div className="bg-gray-600 text-gray-300 font-bold px-8 py-4 rounded-lg shadow-lg text-xl cursor-not-allowed">
+          Applications Currently Closed
+        </div>
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ export default function SoftwarePage() {
             disabled
             className="bg-gray-500 text-gray-300 font-bold px-8 py-4 rounded-lg shadow-lg text-xl cursor-not-allowed"
           >
-            Applications Opening Soon
+            Applications Currently Closed
           </button>
         )}
       </div>
