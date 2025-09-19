@@ -13,7 +13,7 @@ function ContactPage() {
           <div className="flex items-center space-x-4 justify-center">
             <div className="flex flex-col items-center">
               <FaEnvelope className="text-5xl" />
-              <p className="text-xl">macexo@mcmaster.ca</p>
+              <p className="text-xl">exo@mcmaster.ca</p>
             </div>
           </div>
           <div className="flex items-center space-x-4 justify-center">
