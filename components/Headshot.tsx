@@ -28,11 +28,16 @@ const Headshot: React.FC<HeadshotProps> = ({
 
   const getGlowColor = (title: string) => {
     const lowerTitle = title.toLowerCase();
-    if (lowerTitle.includes("principal")) return "group-hover:shadow-[0_0_30px_rgba(189,169,104,0.3)]";
-    if (lowerTitle.includes("software")) return "group-hover:shadow-[0_0_30px_rgba(93,173,226,0.3)]";
-    if (lowerTitle.includes("electrical")) return "group-hover:shadow-[0_0_30px_rgba(250,204,21,0.3)]";
-    if (lowerTitle.includes("mechanical")) return "group-hover:shadow-[0_0_30px_rgba(156,163,175,0.3)]";
-    if (lowerTitle.includes("safety")) return "group-hover:shadow-[0_0_30px_rgba(185,124,143,0.3)]";
+    if (lowerTitle.includes("principal"))
+      return "group-hover:shadow-[0_0_30px_rgba(189,169,104,0.3)]";
+    if (lowerTitle.includes("software"))
+      return "group-hover:shadow-[0_0_30px_rgba(93,173,226,0.3)]";
+    if (lowerTitle.includes("electrical"))
+      return "group-hover:shadow-[0_0_30px_rgba(250,204,21,0.3)]";
+    if (lowerTitle.includes("mechanical"))
+      return "group-hover:shadow-[0_0_30px_rgba(156,163,175,0.3)]";
+    if (lowerTitle.includes("safety"))
+      return "group-hover:shadow-[0_0_30px_rgba(185,124,143,0.3)]";
     return "group-hover:shadow-[0_0_30px_rgba(189,169,104,0.2)]";
   };
 
@@ -41,10 +46,16 @@ const Headshot: React.FC<HeadshotProps> = ({
       {/* Image container */}
       <div className="relative mb-4">
         {/* Decorative ring */}
-        <div className={`absolute inset-0 rounded-full ${getBorderColor(title)} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm scale-110`} />
+        <div
+          className={`absolute inset-0 rounded-full ${getBorderColor(
+            title
+          )} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm scale-110`}
+        />
 
         <div
-          className={`relative w-40 h-40 rounded-full overflow-hidden border-4 ${getBorderColor(title)} transition-all duration-500 ${getGlowColor(title)} bg-white`}
+          className={`relative w-40 h-40 rounded-full overflow-hidden border-4 ${getBorderColor(
+            title
+          )} transition-all duration-500 ${getGlowColor(title)} bg-white`}
         >
           <img
             src={image_url}
