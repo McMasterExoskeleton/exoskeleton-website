@@ -1,70 +1,166 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
+
+import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 function About() {
   const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const onScroll = () => {
-      const element = document.getElementById("about-section");
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.8) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
           setIsVisible(true);
         }
-      }
-    };
+      },
+      { threshold: 0.2 }
+    );
 
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
-  return (
-    <>
-      <div className="py-12 bg-charcoal text-softWhite text-center">
-        <h2 className="text-5xl font-bold mb-4">
-          Who We Are
-          <span className="block w-64 h-1 bg-ashGold mx-auto mt-2"></span>
-        </h2>
-      </div>
-      <section
-        id="about-section"
-        className={`bg-charcoal relative flex flex-col lg:flex-row items-center justify-center text-white py-16 px-8 transition-opacity duration-1000 ${
-          isVisible ? "opacity-100" : "opacity-0"
-        }`}
-        style={{ minHeight: "750px" }}
-      >
-        {/* Image on the left (for lg+ screens) */}
-        <div className="w-full lg:w-1/2 max-w-md px-4 mb-8 lg:mb-0 mx-auto">
-          <div className="rounded-lg overflow-hidden shadow-lg border-4 border-ashGold">
-            <Image
-              src="/team/juan_aura_farm.JPG"
-              alt="Pilot wearing exoskeleton suit"
-              width={800}
-              height={600}
-              className="w-full h-auto object-cover"
-              priority
-            />
-          </div>
-        </div>
+  const stats = [
+    { value: "5+", label: "Disciplines" },
+    { value: "50+", label: "Team Members" },
+    { value: "5th", label: "Place ACE 2025" },
+  ];
 
-        {/* Text content */}
-        <div className="w-full lg:w-1/2 px-4 text-center lg:text-left">
-          <div className="bg-black bg-opacity-70 p-8 rounded-lg shadow-md border-l-4 border-ashGold">
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed font-light text-softWhite">
-              <span className="font-bold text-ashGold">
-                McMaster Exoskeleton
-              </span>{" "}
-              is a newly formed technical team. Entirely student-run, our team
-              spans 5+ disciplines, and aims to design, build, and compete with
-              a lower-limb exoskeleton that enhances users' strength and
-              mobility.
-            </p>
+  return (
+    <section
+      ref={sectionRef}
+      className="relative bg-charcoal overflow-hidden"
+    >
+      {/* Decorative background elements */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-ashGold/5 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-ashGold/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none" />
+
+      {/* Section Header */}
+      <div className="py-16 text-center">
+        <h2
+          className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-softWhite mb-4 transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          Who We Are
+        </h2>
+        <div
+          className={`mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-ashGold to-transparent transition-all duration-1000 delay-200 ${
+            isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+          }`}
+        />
+      </div>
+
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Image Column */}
+          <div
+            className={`relative transition-all duration-1000 delay-300 ${
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-12"
+            }`}
+          >
+            <div className="relative group">
+              {/* Decorative frame */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-ashGold/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              {/* Main image container */}
+              <div className="relative rounded-xl overflow-hidden shadow-2xl">
+                <div className="absolute inset-0 border-2 border-ashGold/30 rounded-xl z-10 pointer-events-none" />
+                <img
+                  src="/team/juan_aura_farm.JPG"
+                  alt="Pilot wearing exoskeleton suit"
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              </div>
+
+              {/* Floating accent card */}
+              <div className="absolute -bottom-6 -right-6 bg-charcoal border border-ashGold/30 rounded-xl p-4 shadow-xl backdrop-blur-sm hidden sm:block">
+                <p className="text-ashGold font-bold text-2xl">5 Months</p>
+                <p className="text-softWhite/70 text-sm">From concept to competition</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Content Column */}
+          <div
+            className={`space-y-8 transition-all duration-1000 delay-500 ${
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-12"
+            }`}
+          >
+            {/* Mission statement */}
+            <div className="relative">
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-ashGold to-ashGold/20 rounded-full" />
+              <div className="pl-6">
+                <p className="text-xl sm:text-2xl lg:text-3xl leading-relaxed font-light text-softWhite">
+                  <span className="font-bold text-ashGold">
+                    McMaster Exoskeleton
+                  </span>{" "}
+                  is a student-run technical team spanning 5+ disciplines. We design, build, and compete with lower-limb exoskeletons that enhance human strength and mobility.
+                </p>
+              </div>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4 pt-4">
+              {stats.map((stat, index) => (
+                <div
+                  key={stat.label}
+                  className={`text-center p-4 rounded-xl bg-black/30 border border-white/5 transition-all duration-700 hover:border-ashGold/30 hover:bg-black/40 ${
+                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+                  style={{ transitionDelay: `${600 + index * 100}ms` }}
+                >
+                  <p className="text-3xl sm:text-4xl font-bold text-ashGold mb-1">
+                    {stat.value}
+                  </p>
+                  <p className="text-sm text-softWhite/60">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <div className="flex flex-wrap gap-4 pt-4">
+              <Link
+                href="/team"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-ashGold text-charcoal font-semibold rounded-lg hover:bg-goldLight transition-all duration-300 shadow-lg hover:shadow-glow"
+              >
+                Meet the Team
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+              <Link
+                href="/ace"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-ashGold/50 text-ashGold font-semibold rounded-lg hover:bg-ashGold/10 transition-all duration-300"
+              >
+                Our Competition
+              </Link>
+            </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 
