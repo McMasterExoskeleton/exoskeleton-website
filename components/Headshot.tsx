@@ -44,7 +44,7 @@ const Headshot: React.FC<HeadshotProps> = ({
         <div className={`absolute inset-0 rounded-full ${getBorderColor(title)} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm scale-110`} />
 
         <div
-          className={`relative w-40 h-40 rounded-full overflow-hidden border-4 ${getBorderColor(title)} transition-all duration-500 ${getGlowColor(title)}`}
+          className={`relative w-40 h-40 rounded-full overflow-hidden border-4 ${getBorderColor(title)} transition-all duration-500 ${getGlowColor(title)} bg-white`}
         >
           <img
             src={image_url}
