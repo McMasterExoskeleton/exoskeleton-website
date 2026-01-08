@@ -53,14 +53,14 @@ function useScrollAnimation(threshold = 0.1) {
   return { ref, isVisible };
 }
 
-export const SponsorCard = ({ logo, name, website }: SponsorProps) => (
+export const SponsorCard = ({ logo, name, website, needsBackground }: SponsorProps & { needsBackground?: boolean }) => (
   <a
     href={website}
     target="_blank"
     rel="noopener noreferrer"
     className="group block p-6 rounded-xl bg-charcoal/30 border border-white/5 hover:border-ashGold/30 transition-all duration-500 hover:bg-charcoal/50"
   >
-    <div className="relative h-24 flex items-center justify-center">
+    <div className={`relative h-24 flex items-center justify-center ${needsBackground ? 'bg-white rounded-lg p-3' : ''}`}>
       <img
         src={logo}
         alt={`${name} logo`}

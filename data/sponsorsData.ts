@@ -2,6 +2,7 @@ export type SponsorProps = {
   logo: string;
   name: string;
   website: string;
+  needsBackground?: boolean;
 };
 
 export const sponsors = {
@@ -25,6 +26,12 @@ export const sponsors = {
       name: "Protocase",
       logo: "/protocase.png",
       website: "https://www.protocase.com/",
+      needsBackground: true,
+    },
+    {
+      name: "Toronto Hydro",
+      logo: "/toronto_hydro.png",
+      website: "https://www.torontohydro.com/",
     },
   ],
   silver: [
@@ -42,6 +49,12 @@ export const sponsors = {
       name: "McMaster Engineering Society",
       logo: "/MES_logo.svg",
       website: "https://www.macengsociety.ca/",
+    },
+    {
+      name: "Phoenix Contact",
+      logo: "/Phoenix_Contact_Logo.png",
+      website: "https://www.phoenixcontact.com/en-ca/",
+      needsBackground: true,
     },
   ],
   gold: [
@@ -69,6 +82,12 @@ export const sponsors = {
       name: "3JPrecision",
       logo: "/3JPrecision_logo.png",
       website: "https://www.3jprecision.com/",
+    },
+    {
+      name: "Pfaff Technologies",
+      logo: "/pfaff_logo.webp",
+      website: "https://pfafftechnologies.com/",
+      needsBackground: true,
     },
   ],
 }; 
