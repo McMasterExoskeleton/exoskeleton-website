@@ -32,7 +32,9 @@ export default {
         },
       },
       fontFamily: {
+        sans: ['Exo 2', 'sans-serif'],
         exo: ['Exo 2', 'sans-serif'],
+        display: ['Rajdhani', 'sans-serif'],
       },
       fontSize: {
         '2xs': '0.625rem',

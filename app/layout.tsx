@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Exo_2 } from "next/font/google";
+import { Exo_2, Rajdhani } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -17,7 +17,13 @@ const geistMono = localFont({
 });
 const exo_2 = Exo_2({
   subsets: ["latin"],
-  weight: ["700", "400"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-exo",
+});
+const rajdhani = Rajdhani({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-display",
 });
 
 export const metadata: Metadata = {
@@ -46,7 +52,7 @@ export default function RootLayout({
         <title>McMaster Exoskeleton</title>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${exo_2.className} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${exo_2.variable} ${rajdhani.variable} ${exo_2.className} antialiased`}
       >
         <Header />
         {children}

@@ -111,20 +111,26 @@ function About() {
               </div>
             </div>
 
-            {/* Stats */}
+            {/* Stats - Enhanced */}
             <div className="grid grid-cols-3 gap-4 pt-4">
               {stats.map((stat, index) => (
                 <div
                   key={stat.label}
-                  className={`text-center p-4 rounded-xl bg-black/30 border border-white/5 transition-all duration-700 hover:border-ashGold/30 hover:bg-black/40 ${
+                  className={`relative text-center p-5 rounded-xl bg-black/30 border border-white/5 group hover:border-ashGold/30 transition-all duration-500 ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                   style={{ transitionDelay: `${600 + index * 100}ms` }}
                 >
-                  <p className="text-3xl sm:text-4xl font-bold text-ashGold mb-1">
+                  {/* Animated background glow */}
+                  <div className="absolute inset-0 rounded-xl bg-ashGold/0 group-hover:bg-ashGold/5 transition-all duration-500" />
+                  {/* Top accent line */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-transparent via-ashGold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <p className="relative text-3xl sm:text-4xl lg:text-5xl font-black text-gradient-gold mb-1 group-hover:scale-105 transition-transform duration-300">
                     {stat.value}
                   </p>
-                  <p className="text-sm text-softWhite/60">{stat.label}</p>
+                  <p className="relative text-xs sm:text-sm text-softWhite/50 uppercase tracking-wider">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </div>

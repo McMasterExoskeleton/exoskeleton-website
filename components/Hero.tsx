@@ -21,6 +21,16 @@ function Hero() {
   const parallaxOffset = scrollY * 0.3;
   const opacityFade = Math.max(0, 1 - scrollY / 600);
 
+  // Floating particles data
+  const particles = [
+    { left: "10%", top: "20%", delay: 0, duration: 3 },
+    { left: "25%", top: "60%", delay: 0.5, duration: 3.5 },
+    { left: "45%", top: "30%", delay: 1, duration: 4 },
+    { left: "65%", top: "70%", delay: 1.5, duration: 3.2 },
+    { left: "80%", top: "40%", delay: 2, duration: 3.8 },
+    { left: "90%", top: "25%", delay: 0.3, duration: 4.2 },
+  ];
+
   return (
     <section className="relative flex justify-center items-center w-full min-h-screen bg-jet overflow-hidden">
       {/* Background Image with Parallax */}
@@ -37,6 +47,36 @@ function Hero() {
       {/* Gradient Overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-jet z-10" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30 z-10" />
+
+      {/* Scan lines effect for tech aesthetic */}
+      <div
+        className="absolute inset-0 z-10 pointer-events-none opacity-[0.015]"
+        style={{
+          backgroundImage: `repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(189, 169, 104, 0.3) 2px,
+            rgba(189, 169, 104, 0.3) 4px
+          )`,
+        }}
+      />
+
+      {/* Floating particles for depth */}
+      <div className="absolute inset-0 z-15 overflow-hidden pointer-events-none">
+        {particles.map((particle, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-ashGold/30 rounded-full animate-float"
+            style={{
+              left: particle.left,
+              top: particle.top,
+              animationDelay: `${particle.delay}s`,
+              animationDuration: `${particle.duration}s`,
+            }}
+          />
+        ))}
+      </div>
 
       {/* Animated accent lines */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-ashGold to-transparent opacity-60 z-20" />
@@ -98,17 +138,18 @@ function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Enhanced */}
       <div
         className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-20 transition-all duration-1000 delay-1000 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
         style={{ opacity: opacityFade }}
       >
-        <div className="flex flex-col items-center gap-2 text-white/60">
-          <span className="text-xs tracking-widest uppercase">Scroll</span>
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-2">
-            <div className="w-1.5 h-1.5 bg-ashGold rounded-full animate-bounce" />
+        <div className="flex flex-col items-center gap-3 text-white/50">
+          <div className="w-[1px] h-8 bg-gradient-to-b from-transparent via-ashGold/60 to-transparent animate-pulse" />
+          <span className="text-[10px] tracking-[0.3em] uppercase font-medium">Scroll</span>
+          <div className="w-5 h-8 border border-white/20 rounded-full flex justify-center pt-2">
+            <div className="w-1 h-2 bg-ashGold rounded-full animate-bounce" />
           </div>
         </div>
       </div>

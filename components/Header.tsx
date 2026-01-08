@@ -59,10 +59,16 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative px-4 py-2 text-softWhite font-medium text-sm lg:text-base tracking-wide group transition-colors duration-300 hover:text-ashGold"
+                className="relative px-4 py-2 text-softWhite font-medium text-sm lg:text-base tracking-wide group"
               >
-                <span>{link.label}</span>
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-ashGold transition-all duration-300 group-hover:w-3/4 rounded-full" />
+                {/* Text with hover effect */}
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-ashGold">
+                  {link.label}
+                </span>
+                {/* Animated underline - improved */}
+                <span className="absolute bottom-0 left-1/2 h-[2px] w-0 bg-gradient-to-r from-transparent via-ashGold to-transparent transition-all duration-300 ease-out group-hover:w-full group-hover:left-0" />
+                {/* Subtle background glow on hover */}
+                <span className="absolute inset-0 rounded-lg bg-ashGold/0 transition-all duration-300 group-hover:bg-ashGold/5" />
               </Link>
             ))}
           </nav>
@@ -94,28 +100,31 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown Menu - Enhanced */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-500 ease-out ${
-          menuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+        className={`md:hidden fixed inset-x-0 top-[60px] z-40 transition-all duration-500 ease-out ${
+          menuOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-4 pointer-events-none"
         }`}
       >
-        <nav className="bg-jet/98 backdrop-blur-lg border-t border-ashGold/10">
-          <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
-            {navLinks.map((link, index) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={toggleMenu}
-                className="block px-4 py-3 text-softWhite font-medium rounded-lg transition-all duration-300 hover:bg-ashGold/10 hover:text-ashGold hover:pl-6"
-                style={{
-                  transitionDelay: menuOpen ? `${index * 50}ms` : "0ms",
-                }}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
+        <nav className="mx-4 mt-2 p-2 rounded-2xl bg-jet/98 backdrop-blur-xl border border-ashGold/10 shadow-2xl">
+          {navLinks.map((link, index) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={toggleMenu}
+              className={`block px-5 py-4 text-softWhite font-medium rounded-xl transition-all duration-300 hover:bg-ashGold/10 hover:text-ashGold hover:pl-7 ${
+                menuOpen ? "animate-fade-in-up" : ""
+              }`}
+              style={{
+                animationDelay: menuOpen ? `${index * 50}ms` : "0ms",
+                animationFillMode: "both",
+              }}
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>

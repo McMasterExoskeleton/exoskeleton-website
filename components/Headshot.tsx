@@ -28,23 +28,37 @@ const Headshot: React.FC<HeadshotProps> = ({
 
   const getGlowColor = (title: string) => {
     const lowerTitle = title.toLowerCase();
-    if (lowerTitle.includes("principal")) return "group-hover:shadow-[0_0_30px_rgba(189,169,104,0.3)]";
-    if (lowerTitle.includes("software")) return "group-hover:shadow-[0_0_30px_rgba(93,173,226,0.3)]";
-    if (lowerTitle.includes("electrical")) return "group-hover:shadow-[0_0_30px_rgba(250,204,21,0.3)]";
-    if (lowerTitle.includes("mechanical")) return "group-hover:shadow-[0_0_30px_rgba(156,163,175,0.3)]";
-    if (lowerTitle.includes("safety")) return "group-hover:shadow-[0_0_30px_rgba(185,124,143,0.3)]";
+    if (lowerTitle.includes("principal"))
+      return "group-hover:shadow-[0_0_30px_rgba(189,169,104,0.3)]";
+    if (lowerTitle.includes("software"))
+      return "group-hover:shadow-[0_0_30px_rgba(93,173,226,0.3)]";
+    if (lowerTitle.includes("electrical"))
+      return "group-hover:shadow-[0_0_30px_rgba(250,204,21,0.3)]";
+    if (lowerTitle.includes("mechanical"))
+      return "group-hover:shadow-[0_0_30px_rgba(156,163,175,0.3)]";
+    if (lowerTitle.includes("safety"))
+      return "group-hover:shadow-[0_0_30px_rgba(185,124,143,0.3)]";
     return "group-hover:shadow-[0_0_30px_rgba(189,169,104,0.2)]";
   };
 
   return (
-    <div className="group flex flex-col items-center p-6 rounded-2xl bg-black/20 border border-white/5 hover:border-ashGold/20 transition-all duration-500 hover:bg-black/30">
+    <div className="group relative flex flex-col items-center p-6 rounded-2xl bg-black/20 border border-white/5 hover:border-ashGold/20 transition-all duration-500 hover:bg-black/30 hover:-translate-y-1 overflow-hidden">
+      {/* Background gradient on hover */}
+      <div className="absolute inset-0 bg-gradient-to-b from-ashGold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
       {/* Image container */}
       <div className="relative mb-4">
         {/* Decorative ring */}
-        <div className={`absolute inset-0 rounded-full ${getBorderColor(title)} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm scale-110`} />
+        <div
+          className={`absolute inset-0 rounded-full ${getBorderColor(
+            title
+          )} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm scale-110`}
+        />
 
         <div
-          className={`relative w-40 h-40 rounded-full overflow-hidden border-4 ${getBorderColor(title)} transition-all duration-500 ${getGlowColor(title)} bg-white`}
+          className={`relative w-40 h-40 rounded-full overflow-hidden border-4 ${getBorderColor(
+            title
+          )} transition-all duration-500 ${getGlowColor(title)} bg-white`}
         >
           <img
             src={image_url}
@@ -52,14 +66,21 @@ const Headshot: React.FC<HeadshotProps> = ({
             className="w-full h-full object-cover object-[center_10%] transition-transform duration-500 group-hover:scale-110"
           />
         </div>
+
+        {/* Subtle ring animation on hover */}
+        <div
+          className={`absolute -inset-2 rounded-full border-2 ${getBorderColor(
+            title
+          )} opacity-0 group-hover:opacity-30 transition-all duration-700 group-hover:scale-110`}
+        />
       </div>
 
       {/* Text content */}
-      <div className="text-center space-y-1">
-        <h3 className="text-xl font-bold text-softWhite group-hover:text-ashGold transition-colors duration-300">
+      <div className="relative text-center space-y-1">
+        <h3 className="text-lg sm:text-xl font-bold text-softWhite group-hover:text-ashGold transition-colors duration-300">
           {name}
         </h3>
-        <p className="text-sm text-softWhite/60">{title}</p>
+        <p className="text-xs sm:text-sm text-softWhite/60">{title}</p>
       </div>
 
       {/* LinkedIn link */}
@@ -67,11 +88,11 @@ const Headshot: React.FC<HeadshotProps> = ({
         href={linkedin_url}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-4 p-2 rounded-lg bg-charcoal border border-white/10 hover:border-ashGold/30 hover:bg-ashGold/10 transition-all duration-300 group/link"
+        className="relative mt-4 p-2.5 rounded-lg bg-charcoal border border-white/10 hover:border-ashGold/30 hover:bg-ashGold/10 transition-all duration-300 group/link hover:scale-110"
         aria-label={`${name}'s LinkedIn profile`}
       >
         <FaLinkedin
-          size={20}
+          size={18}
           className="text-softWhite/60 group-hover/link:text-ashGold transition-colors duration-300"
         />
       </a>
