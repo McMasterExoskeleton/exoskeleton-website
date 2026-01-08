@@ -28,11 +28,26 @@ function Footer() {
   ];
 
   return (
-    <footer className="relative bg-jet text-softWhite">
+    <footer className="relative bg-jet text-softWhite overflow-hidden">
+      {/* Subtle grid pattern background */}
+      <div
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(189, 169, 104, 0.5) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(189, 169, 104, 0.5) 1px, transparent 1px)
+          `,
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      {/* Gradient overlay at top for smooth transition */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-charcoal to-transparent pointer-events-none" />
+
       {/* Top border */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-ashGold/30 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">

@@ -216,8 +216,9 @@ html, body {
   animation: gradient-shift 3s ease infinite;
 }
 
-/* Delay utilities */
+/* Delay utilities - Golden ratio inspired for natural feel */
 .delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; }
@@ -225,6 +226,99 @@ html, body {
 .delay-600 { animation-delay: 600ms; }
 .delay-700 { animation-delay: 700ms; }
 .delay-800 { animation-delay: 800ms; }
+
+/* Premium easing functions */
+.ease-premium {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ease-bounce-subtle {
+  transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Unified Card System */
+.card {
+  position: relative;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background: linear-gradient(
+    135deg,
+    rgba(189, 169, 104, 0.1) 0%,
+    transparent 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.card:hover {
+  border-color: rgba(189, 169, 104, 0.3);
+  background: rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(189, 169, 104, 0.1);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Scan lines effect for tech aesthetic */
+.scan-lines {
+  position: relative;
+}
+
+.scan-lines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(189, 169, 104, 0.1) 2px,
+    rgba(189, 169, 104, 0.1) 4px
+  );
+}
+
+/* Section divider */
+.section-divider-fancy {
+  position: relative;
+  height: 6rem;
+  margin: -3rem 0;
+  z-index: 10;
+}
+
+.section-divider-fancy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, rgba(189, 169, 104, 0.05), transparent);
+}
+
+.section-divider-fancy::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8rem;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(189, 169, 104, 0.4), transparent);
+}
 
 /* Glassmorphism effects */
 .glass {
@@ -290,11 +384,26 @@ html, body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(189, 169, 104, 0.1);
 }
 
-/* Button styles */
+/* Display font for headings - uses Tailwind's font-display class */
+.font-display {
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Button styles - Unified System */
 .btn-primary {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--gold);
+  color: #1C1C1E;
+  font-weight: 700;
+  border-radius: 0.5rem;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(189, 169, 104, 0.2);
 }
 
 .btn-primary::before {
@@ -304,8 +413,8 @@ html, body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-primary:hover::before {
@@ -313,8 +422,64 @@ html, body {
 }
 
 .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(189, 169, 104, 0.4);
+  background: var(--gold-light);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(189, 169, 104, 0.3);
+}
+
+/* Secondary button - outlined */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid rgba(189, 169, 104, 0.5);
+  color: var(--gold);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  background: transparent;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-secondary:hover {
+  border-color: var(--gold);
+  background: rgba(189, 169, 104, 0.1);
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(189, 169, 104, 0.4);
+}
+
+/* Ghost button - minimal */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  color: rgba(245, 245, 245, 0.7);
+  font-weight: 500;
+  border-radius: 0.5rem;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-ghost:hover {
+  color: var(--gold);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Button sizes */
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
 }
 
 /* Image reveal effect */

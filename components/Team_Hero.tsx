@@ -26,6 +26,20 @@ function Team_Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-charcoal z-10" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40 z-10" />
 
+      {/* Scan lines effect */}
+      <div
+        className="absolute inset-0 z-10 pointer-events-none opacity-[0.015]"
+        style={{
+          backgroundImage: `repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(189, 169, 104, 0.3) 2px,
+            rgba(189, 169, 104, 0.3) 4px
+          )`,
+        }}
+      />
+
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-ashGold/50 to-transparent z-20" />
 

@@ -164,17 +164,20 @@ function RecruitingPage() {
               <Link
                 key={subteam.name}
                 href={`/recruiting/${subteam.slug}`}
-                className={`group relative p-8 rounded-2xl bg-charcoal/50 border border-white/5 ${subteam.hoverBorder} transition-all duration-500 hover:bg-charcoal overflow-hidden ${
+                className={`group relative p-8 rounded-2xl bg-charcoal/50 border border-white/5 ${subteam.hoverBorder} transition-all duration-500 hover:bg-charcoal hover:-translate-y-1 overflow-hidden ${
                   isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: `${700 + index * 100}ms` }}
               >
                 {/* Hover glow effect */}
-                <div className={`absolute inset-0 ${subteam.iconBg} opacity-0 group-hover:opacity-30 transition-opacity duration-500 blur-2xl`} />
+                <div className={`absolute inset-0 ${subteam.iconBg} opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-3xl`} />
+
+                {/* Top accent line on hover */}
+                <div className={`absolute top-0 left-0 right-0 h-[2px] bg-${subteam.color} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
 
                 <div className="relative flex items-start gap-6">
                   {/* Icon */}
-                  <div className={`flex-shrink-0 p-4 rounded-xl ${subteam.iconBg} transition-all duration-300 group-hover:scale-110`}>
+                  <div className={`flex-shrink-0 p-4 rounded-xl ${subteam.iconBg} transition-all duration-300 group-hover:scale-110 group-hover:rotate-3`}>
                     <subteam.icon size={32} className={`text-${subteam.color}`} />
                   </div>
 
@@ -189,7 +192,7 @@ function RecruitingPage() {
                   </div>
 
                   {/* Arrow */}
-                  <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1">
+                  <div className="flex-shrink-0 self-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-2">
                     <svg
                       className={`w-6 h-6 text-${subteam.color}`}
                       fill="none"
@@ -200,11 +203,14 @@ function RecruitingPage() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
-                        d="M9 5l7 7-7 7"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
                       />
                     </svg>
                   </div>
                 </div>
+
+                {/* Bottom shadow accent */}
+                <div className={`absolute bottom-0 left-4 right-4 h-8 bg-gradient-to-t from-${subteam.color}/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               </Link>
             ))}
           </div>
