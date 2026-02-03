@@ -157,7 +157,7 @@ function Sponsors() {
             cutting-edge exoskeleton technology.
           </p>
           <button
-            onClick={() => window.open("/sponsor_proposal.pdf", "_blank")}
+            onClick={() => window.open("/2526 McMaster Exoskeleton Sponsorship Proposal.pdf", "_blank")}
             className={`inline-flex items-center gap-2 px-8 py-4 bg-ashGold text-charcoal font-bold rounded-lg text-lg hover:bg-goldLight transition-all duration-300 shadow-lg hover:shadow-glow ${
               helpSection.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}

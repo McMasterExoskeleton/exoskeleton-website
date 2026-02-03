@@ -152,7 +152,7 @@ function ContactPage() {
             Interested in sponsoring or partnering with us?
           </p>
           <a
-            href="/sponsor_proposal.pdf"
+            href="/2526 McMaster Exoskeleton Sponsorship Proposal.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-ashGold text-charcoal font-bold rounded-lg hover:bg-goldLight transition-all duration-300 shadow-lg hover:shadow-glow"
