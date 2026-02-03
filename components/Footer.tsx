@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { FaInstagram, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaEnvelope, FaYoutube } from "react-icons/fa";
 
 function Footer() {
   const navLinks = [
@@ -24,6 +24,11 @@ function Footer() {
       href: "https://www.linkedin.com/company/mcmasterexo/",
       icon: FaLinkedin,
       label: "McMaster Exoskeleton",
+    },
+    {
+      href: "https://www.youtube.com/@McMasterExo",
+      icon: FaYoutube,
+      label: "@McMasterExo",
     },
   ];
 
@@ -145,6 +150,17 @@ function Footer() {
                 >
                   <FaLinkedin className="text-ashGold" />
                   <span>McMaster Exoskeleton</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/@McMasterExo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-softWhite/60 hover:text-ashGold transition-colors duration-300"
+                >
+                  <FaYoutube className="text-ashGold" />
+                  <span>@McMasterExo</span>
                 </a>
               </li>
             </ul>
