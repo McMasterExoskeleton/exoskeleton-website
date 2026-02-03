@@ -26,13 +26,7 @@ const affiliates = [
   },
 ];
 
-const specialThanks = [
-  {
-    name: "Luke Schuurman",
-    role: "Head of Lettuce",
-    website: "https://www.linkedin.com/in/luke-schuurman/?originalSubdomain=ca",
-  },
-];
+const specialThanks: SpecialThanksProps[] = [];
 
 function useScrollAnimation(threshold = 0.1) {
   const [isVisible, setIsVisible] = useState(false);
@@ -322,33 +316,35 @@ function Sponsors() {
           </div>
 
           {/* Special Thanks */}
-          <div
-            className={`transition-all duration-1000 delay-700 ${
-              sponsorsSection.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-px flex-grow bg-gradient-to-r from-transparent to-ashGold/30" />
-              <h3 className="text-xl font-bold text-ashGold/80">Special Thanks</h3>
-              <div className="h-px flex-grow bg-gradient-to-l from-transparent to-ashGold/30" />
+          {specialThanks.length > 0 && (
+            <div
+              className={`transition-all duration-1000 delay-700 ${
+                sponsorsSection.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              <div className="flex items-center justify-center gap-4 mb-8">
+                <div className="h-px flex-grow bg-gradient-to-r from-transparent to-ashGold/30" />
+                <h3 className="text-xl font-bold text-ashGold/80">Special Thanks</h3>
+                <div className="h-px flex-grow bg-gradient-to-l from-transparent to-ashGold/30" />
+              </div>
+              <div className="flex justify-center gap-4">
+                {specialThanks.map((thank) => (
+                  <a
+                    key={thank.name}
+                    href={thank.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group p-6 rounded-xl bg-charcoal/50 border border-white/5 hover:border-ashGold/30 transition-all duration-300 text-center"
+                  >
+                    <p className="text-lg font-bold text-softWhite group-hover:text-ashGold transition-colors duration-300">
+                      {thank.name}
+                    </p>
+                    <p className="text-sm text-softWhite/50">{thank.role}</p>
+                  </a>
+                ))}
+              </div>
             </div>
-            <div className="flex justify-center gap-4">
-              {specialThanks.map((thank) => (
-                <a
-                  key={thank.name}
-                  href={thank.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group p-6 rounded-xl bg-charcoal/50 border border-white/5 hover:border-ashGold/30 transition-all duration-300 text-center"
-                >
-                  <p className="text-lg font-bold text-softWhite group-hover:text-ashGold transition-colors duration-300">
-                    {thank.name}
-                  </p>
-                  <p className="text-sm text-softWhite/50">{thank.role}</p>
-                </a>
-              ))}
-            </div>
-          </div>
+          )}
         </div>
 
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-ashGold/30 to-transparent" />
