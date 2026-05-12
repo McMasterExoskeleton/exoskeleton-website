@@ -50,14 +50,25 @@ export const sponsors = {
       logo: "/MES_logo.svg",
       website: "https://www.macengsociety.ca/",
     },
+  ],
+  gold: [
+    {
+      name: "Trexo Robotics",
+      logo: "/trexo-logo-light.webp",
+      website: "https://www.trexorobotics.com/",
+    },
+    {
+      name: "CubeMars",
+      logo: "/cubemars-logo.webp",
+      website: "https://www.cubemars.com/",
+      needsBackground: true,
+    },
     {
       name: "Phoenix Contact",
       logo: "/Phoenix_Contact_Logo.png",
       website: "https://www.phoenixcontact.com/en-ca/",
       needsBackground: true,
     },
-  ],
-  gold: [
     {
       name: "PCB Libraries",
       logo: "/pcb-libraries.png",
