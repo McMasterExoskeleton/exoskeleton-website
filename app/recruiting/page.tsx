@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import {
   APPLICATIONS_OPEN,
-  APPLICATION_FORM_LINK,
+  GENERAL_APPLICATION_LINK,
 } from "./constants";
 
 const SUBTEAMS = [
@@ -113,7 +113,7 @@ function RecruitingPage() {
           >
             {APPLICATIONS_OPEN ? (
               <a
-                href={APPLICATION_FORM_LINK}
+                href={GENERAL_APPLICATION_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-ashGold text-charcoal font-bold rounded-lg text-lg hover:bg-goldLight transition-all duration-300 shadow-lg hover:shadow-glow"

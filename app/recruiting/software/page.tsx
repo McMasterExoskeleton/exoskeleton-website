@@ -1,5 +1,5 @@
 import React from "react";
-import { APPLICATIONS_OPEN, APPLICATION_FORM_LINK } from "../constants";
+import { APPLICATIONS_OPEN, SOFTWARE_APPLICATION_LINK } from "../constants";
 
 export default function SoftwarePage() {
   return (
@@ -15,7 +15,7 @@ export default function SoftwarePage() {
           maintaining safety, responsiveness, and smooth motion.
         </p>
         <p className="mb-6 text-xl">
-          Our work spans embedded programming in C++, feedback control design,
+          Our work spans embedded programming in C/C++,
           machine learning with PyTorch, and full-stack web development for
           real-time monitoring. We turn raw data into meaningful movement.
         </p>
@@ -37,7 +37,7 @@ export default function SoftwarePage() {
       <div className="flex justify-center mt-12">
         {APPLICATIONS_OPEN ? (
           <a
-            href={APPLICATION_FORM_LINK}
+            href={SOFTWARE_APPLICATION_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-ashGold text-charcoal font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-yellow-400 transition-colors text-xl"

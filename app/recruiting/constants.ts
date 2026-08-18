@@ -1,4 +1,7 @@
-export const APPLICATIONS_OPEN = false; // Set to true when applications are open
-export const APPLICATION_FORM_LINK = "";
-export const BUSINESS_APPLICATIONS_OPEN = false; // Set to true when business applications are open
-export const BUSINESS_APPLICATION_FORM_LINK = ""; 
+export const APPLICATIONS_OPEN = true; // Set to true when applications are open
+export const GENERAL_APPLICATION_LINK = ""; // Used on the main recruiting page
+
+export const SOFTWARE_APPLICATION_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSfGezcc82_VxnPqHvZ0kKeI2O6d2IdpBwioZ384lmIOoBBsNg/viewform?usp=header";
+export const MECHANICAL_APPLICATION_LINK = "";
+export const ELECTRICAL_APPLICATION_LINK = "";
+export const BUSINESS_APPLICATION_LINK = "";
