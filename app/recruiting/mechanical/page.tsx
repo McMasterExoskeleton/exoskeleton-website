@@ -11,62 +11,41 @@ export default function MechanicalPage() {
         <p className="mb-6 text-xl">
           The Mechanical team is responsible for the design and fabrication of
           the exoskeleton which will support the pilot's entire range of motion
-          from below their hip. See below for details on our three Mechanical
-          Sub-teams: Joint Actuation, Biomechanics, and Power Integration.
+          from below their hip. See below for details on our two Mechanical
+          Sub-teams: Waist and Linkages.
         </p>
         <p className="mb-6 text-xl">
-          <strong>Joint Actuation Team</strong>
+          <strong>Waist Team</strong>
           <br />
-          The Joint Actuation team is responsible for the motor and gearbox
-          development of all powered joints in the exoskeleton. Members will
-          work closely with the Biomechanics team to corroborate joint design
-          and the Electrical team to confirm motor compatibility and actuation.
+          The Waist team is responsible for the central structural component of the
+          exoskeleton. Members work on the design and fabrication of the waist
+          assembly, ensuring it safely and comfortably interfaces with the pilot
+          while supporting the attached leg linkages.
           <br />
-          As a general member you will work on spec calculations, gearbox and
-          joint design, and motor selection. Members will apply knowledge in
-          gearbox design, robotics, and kinematics to develop the powered
-          functionality of the exoskeleton.
+          As a general member you will work on ergonomics, material selection,
+          and structural design to ensure the exoskeleton's core is both
+          robust and wearable.
         </p>
         <p className="mb-6 text-xl">
-          <strong>Biomechanics Team</strong>
+          <strong>Linkages Team</strong>
           <br />
-          The Biomechanics team is responsible for the exoskeleton's ability to
-          withstand static and dynamic loads without hindering the pilot's range
-          of motion. Members will work closely with pilots regarding limb and
-          joint design to better align with the pilot's natural motion and
-          improve ergonomics.
+          The Linkages team is responsible for the mechanical structures that connect
+          the joints and transmit forces throughout the exoskeleton's legs. Members
+          design components that mimic human biomechanics while withstanding the 
+          dynamic loads of motion.
           <br />
           As a general member you will work on limb and joint design,
-          ergonomics, and material selection. Members will apply biomechanics
-          and engineering mechanics to develop the wearable and rigid capability
-          of the exoskeleton.
-        </p>
-        <p className="mb-6 text-xl">
-          <strong>Power Integration Team</strong>
-          <br />
-          The Power Integration team is responsible for the integration and
-          packaging of all electrical components worn by the pilot, while
-          considering thermal management, safety measures, and accessibility.
-          Members will work closely with the Electrical team to plan the power
-          electronics architecture and the Joint Actuation team for wire
-          harnessing.
-          <br />
-          As a general member you will work on packaging design, electrical
-          documentation, thermal and safety considerations, and material
-          selections. Members will use knowledge in batteries, power electronics
-          and robotics to develop the mechanical-electrical integration
-          solutions powering the exoskeleton.
+          kinematics, and material selection to develop the rigid capability
+          of the exoskeleton's legs.
         </p>
       </div>
       <div className="w-full max-w-xl bg-black bg-opacity-60 rounded-lg p-8 mt-4">
         <h2 className="text-3xl font-semibold text-gray-400 mb-4">Roles</h2>
         <ul className="list-disc list-inside text-left text-xl text-softWhite">
           <li>CAD Designer</li>
-          <li>Structural Analyst</li>
+          <li>Waist Subteam Engineer</li>
+          <li>Linkages Subteam Engineer</li>
           <li>Prototyping Specialist</li>
-          <li>Joint Actuation Specialist</li>
-          <li>Biomechanics Analyst</li>
-          <li>Power Integration Engineer</li>
         </ul>
       </div>
       <div className="flex justify-center mt-12">
