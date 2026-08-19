@@ -22,7 +22,13 @@ export default function Header() {
 
   const navLinks = [
     { href: "/recruiting", label: "Join the Team" },
-    { href: "/ace", label: "ACE 2025" },
+    { 
+      href: "/ace2026", 
+      label: "ACE 2026",
+      dropdown: [
+        { href: "/ace2025", label: "ACE 2025" }
+      ]
+    },
     { href: "/team", label: "Team" },
     { href: "/design", label: "Design" },
     { href: "/sponsors", label: "Sponsors" },
@@ -56,20 +62,39 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="relative px-4 py-2 text-softWhite font-medium text-sm lg:text-base tracking-wide group"
-              >
-                {/* Text with hover effect */}
-                <span className="relative z-10 transition-colors duration-300 group-hover:text-ashGold">
-                  {link.label}
-                </span>
-                {/* Animated underline - improved */}
-                <span className="absolute bottom-0 left-1/2 h-[2px] w-0 bg-gradient-to-r from-transparent via-ashGold to-transparent transition-all duration-300 ease-out group-hover:w-full group-hover:left-0" />
-                {/* Subtle background glow on hover */}
-                <span className="absolute inset-0 rounded-lg bg-ashGold/0 transition-all duration-300 group-hover:bg-ashGold/5" />
-              </Link>
+              <div key={link.href} className="relative group">
+                <Link
+                  href={link.href}
+                  className="relative px-4 py-2 text-softWhite font-medium text-sm lg:text-base tracking-wide group flex items-center gap-1"
+                >
+                  <span className="relative z-10 transition-colors duration-300 group-hover:text-ashGold">
+                    {link.label}
+                  </span>
+                  {link.dropdown && (
+                    <svg className="w-4 h-4 transition-transform group-hover:rotate-180 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  )}
+                  <span className="absolute bottom-0 left-1/2 h-[2px] w-0 bg-gradient-to-r from-transparent via-ashGold to-transparent transition-all duration-300 ease-out group-hover:w-full group-hover:left-0" />
+                  <span className="absolute inset-0 rounded-lg bg-ashGold/0 transition-all duration-300 group-hover:bg-ashGold/5" />
+                </Link>
+
+                {link.dropdown && (
+                  <div className="absolute top-full left-0 w-36 pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
+                    <div className="bg-jet/95 backdrop-blur-md border border-ashGold/10 rounded-lg shadow-xl overflow-hidden py-2">
+                      {link.dropdown.map((sublink) => (
+                        <Link
+                          key={sublink.href}
+                          href={sublink.href}
+                          className="block px-4 py-2 text-sm text-softWhite hover:bg-ashGold/10 hover:text-ashGold transition-colors duration-200"
+                        >
+                          {sublink.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
 
@@ -110,20 +135,35 @@ export default function Header() {
       >
         <nav className="mx-4 mt-2 p-2 rounded-2xl bg-jet/98 backdrop-blur-xl border border-ashGold/10 shadow-2xl">
           {navLinks.map((link, index) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={toggleMenu}
-              className={`block px-5 py-4 text-softWhite font-medium rounded-xl transition-all duration-300 hover:bg-ashGold/10 hover:text-ashGold hover:pl-7 ${
-                menuOpen ? "animate-fade-in-up" : ""
-              }`}
-              style={{
-                animationDelay: menuOpen ? `${index * 50}ms` : "0ms",
-                animationFillMode: "both",
-              }}
-            >
-              {link.label}
-            </Link>
+            <div key={link.href}>
+              <Link
+                href={link.href}
+                onClick={toggleMenu}
+                className={`block px-5 py-4 text-softWhite font-medium rounded-xl transition-all duration-300 hover:bg-ashGold/10 hover:text-ashGold hover:pl-7 ${
+                  menuOpen ? "animate-fade-in-up" : ""
+                }`}
+                style={{
+                  animationDelay: menuOpen ? `${index * 50}ms` : "0ms",
+                  animationFillMode: "both",
+                }}
+              >
+                {link.label}
+              </Link>
+              {link.dropdown && (
+                <div className="pl-6 border-l border-white/10 ml-5 my-1">
+                  {link.dropdown.map((sublink) => (
+                    <Link
+                      key={sublink.href}
+                      href={sublink.href}
+                      onClick={toggleMenu}
+                      className="block px-4 py-3 text-sm text-softWhite/80 rounded-xl hover:text-ashGold hover:pl-6 transition-all duration-300"
+                    >
+                      {sublink.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </nav>
       </div>

@@ -157,7 +157,7 @@ function About() {
                 </svg>
               </Link>
               <Link
-                href="/ace"
+                href="/ace2026"
                 className="inline-flex items-center gap-2 px-6 py-3 border border-ashGold/50 text-ashGold font-semibold rounded-lg hover:bg-ashGold/10 transition-all duration-300"
               >
                 Our Competition
