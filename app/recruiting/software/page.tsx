@@ -28,10 +28,10 @@ export default function SoftwarePage() {
       <div className="w-full max-w-xl bg-black bg-opacity-60 rounded-lg p-8 mt-4">
         <h2 className="text-3xl font-semibold text-mutedBlue mb-4">Roles</h2>
         <ul className="list-disc list-inside text-left text-xl text-softWhite">
-          <li>Embedded Software </li>
-          <li>ML/AI Team</li>
+          <li>Embedded Software</li>
+          <li>ML/AI Engineering</li>
           <li>Control Systems / Exoskeleton Algorithm</li>
-          <li>Exoskeleton Monitoring(Full-Stack)</li>
+          <li>Exoskeleton Monitoring (Full-Stack)</li>
         </ul>
       </div>
       <div className="flex justify-center mt-12">
