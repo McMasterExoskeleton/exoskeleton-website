@@ -186,9 +186,7 @@ export default function AceCompetitionPage() {
                 experienceSection.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              In our latest year competing at ACE (2026), hosted at the University of
-              Michigan, our team built a functional exoskeleton in just 5 months and
-              placed 5th overall!
+              In our latest year competing at ACE (2026), hosted at McMaster University—that's us!—our team built a functional exoskeleton from scratch throughout the duration of our school year, and we placed 5th!
             </p>
           </div>
 

@@ -74,7 +74,7 @@ function About() {
               <div className="relative rounded-xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 border-2 border-ashGold/30 rounded-xl z-10 pointer-events-none" />
                 <img
-                  src="/team/juan_aura_farm.JPG"
+                  src="/team/statue.jpg"
                   alt="Pilot wearing exoskeleton suit"
                   className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -84,8 +84,8 @@ function About() {
 
               {/* Floating accent card */}
               <div className="absolute -bottom-6 -right-6 bg-charcoal border border-ashGold/30 rounded-xl p-4 shadow-xl backdrop-blur-sm hidden sm:block">
-                <p className="text-ashGold font-bold text-2xl">5 Months</p>
-                <p className="text-softWhite/70 text-sm">From concept to competition</p>
+                <p className="text-ashGold font-bold text-2xl">Full Year</p>
+                <p className="text-softWhite/70 text-sm">Built entirely from scratch</p>
               </div>
             </div>
           </div>

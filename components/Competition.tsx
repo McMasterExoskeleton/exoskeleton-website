@@ -132,7 +132,7 @@ function Competition() {
               <div className="relative rounded-xl overflow-hidden shadow-2xl z-10">
                 <div className="absolute inset-0 border-2 border-ashGold/20 rounded-xl z-10 pointer-events-none" />
                 <img
-                  src="/team/pilots.png"
+                  src="/team/pilots_p2.jpg"
                   alt="Exoskeleton pilots at ACE Competition"
                   className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -142,7 +142,7 @@ function Competition() {
                 {/* Floating badge */}
                 <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm border border-ashGold/30 rounded-lg px-4 py-2">
                   <p className="text-ashGold font-bold text-lg">5th Place</p>
-                  <p className="text-softWhite/70 text-xs">ACE 2025 - First Year</p>
+                  <p className="text-softWhite/70 text-xs">ACE 2026 - 2nd Year</p>
                 </div>
               </div>
 
