@@ -258,16 +258,16 @@ export default function AceCompetitionPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {ace2026Images.map((img, idx) => (
               <div
-                key={img}
+                key={img.src}
                 className={`group relative aspect-[4/3] rounded-xl overflow-hidden transition-all duration-700 ${
                   gallerySection.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: `${300 + idx * 100}ms` }}
               >
                 <img
-                  src={img}
+                  src={img.src}
                   alt={`ACE 2026 photo ${idx + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className={`w-full h-full object-cover ${img.position || 'object-center'} transition-transform duration-700 group-hover:scale-110`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-0 border-2 border-ashGold/0 group-hover:border-ashGold/50 rounded-xl transition-colors duration-300" />
