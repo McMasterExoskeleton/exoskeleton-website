@@ -60,11 +60,11 @@ function TeamLeads() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-6">
           {execs.map((exec: HeadshotProps, index: number) => (
             <div
               key={exec.name}
-              className={`transition-all duration-700 ${
+              className={`w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] transition-all duration-700 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: `${400 + index * 100}ms` }}
