@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import ace2025Images from "./ace2025Images";
+import ace2026Images from "./ace2026Images";
 
 const EVENTS = [
   { name: "Design Review", description: "Technical evaluation of exoskeleton design" },
@@ -49,7 +49,7 @@ export default function AceCompetitionPage() {
         <div
           className="absolute inset-0 w-full h-full"
           style={{
-            backgroundImage: "url('/ace_2025/vineet_obstacle.JPG')",
+            backgroundImage: "url('/ace_2026/background_image.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -98,7 +98,7 @@ export default function AceCompetitionPage() {
             <span className="text-4xl font-bold text-ashGold">5th</span>
             <div className="text-left">
               <p className="text-sm text-softWhite/60">Place Overall</p>
-              <p className="text-sm font-medium text-softWhite">ACE 2025 - First Year</p>
+              <p className="text-sm font-medium text-softWhite">ACE 2026</p>
             </div>
           </div>
         </div>
@@ -174,7 +174,7 @@ export default function AceCompetitionPage() {
                 experienceSection.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Our 2025 ACE Experience
+              Our 2026 ACE Experience
             </h2>
             <div
               className={`mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-ashGold to-transparent mb-8 transition-all duration-1000 delay-200 ${
@@ -186,7 +186,7 @@ export default function AceCompetitionPage() {
                 experienceSection.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              In our first year competing at ACE (2025), hosted at the University of
+              In our latest year competing at ACE (2026), hosted at the University of
               Michigan, our team built a functional exoskeleton in just 5 months and
               placed 5th overall!
             </p>
@@ -256,7 +256,7 @@ export default function AceCompetitionPage() {
 
           {/* Gallery Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ace2025Images.map((img, idx) => (
+            {ace2026Images.map((img, idx) => (
               <div
                 key={img}
                 className={`group relative aspect-[4/3] rounded-xl overflow-hidden transition-all duration-700 ${
@@ -266,7 +266,7 @@ export default function AceCompetitionPage() {
               >
                 <img
                   src={img}
-                  alt={`ACE 2025 photo ${idx + 1}`}
+                  alt={`ACE 2026 photo ${idx + 1}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
