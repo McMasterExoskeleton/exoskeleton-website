@@ -1,5 +1,5 @@
 import React from "react";
-import { APPLICATIONS_OPEN, MECHANICAL_APPLICATION_LINK } from "../constants";
+import { APPLICATIONS_OPEN, APPLICATION_FORM_LINK } from "../constants";
 
 export default function MechanicalPage() {
   return (
@@ -51,7 +51,7 @@ export default function MechanicalPage() {
       <div className="flex justify-center mt-12">
         {APPLICATIONS_OPEN ? (
           <a
-            href={MECHANICAL_APPLICATION_LINK}
+            href={APPLICATION_FORM_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-ashGold text-charcoal font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-yellow-400 transition-colors text-xl"

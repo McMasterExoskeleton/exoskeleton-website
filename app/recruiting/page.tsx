@@ -6,11 +6,10 @@ import {
   FaBolt,
   FaCogs,
   FaCode,
-  FaChartLine,
 } from "react-icons/fa";
 import {
   APPLICATIONS_OPEN,
-  GENERAL_APPLICATION_LINK,
+  APPLICATION_FORM_LINK,
 } from "./constants";
 
 const SUBTEAMS = [
@@ -46,17 +45,6 @@ const SUBTEAMS = [
     iconBg: "bg-mutedBlue/10",
     description:
       "Develop the code that controls the exoskeleton, from embedded systems to applied ML applications.",
-  },
-  {
-    name: "Business",
-    slug: "business",
-    icon: FaChartLine,
-    color: "ashGold",
-    borderColor: "border-ashGold/50",
-    hoverBorder: "hover:border-ashGold",
-    iconBg: "bg-ashGold/10",
-    description:
-      "Lead outreach, sponsorship, finance, and team operations to keep us moving forward.",
   },
 ];
 
@@ -113,9 +101,12 @@ function RecruitingPage() {
           >
             {APPLICATIONS_OPEN ? (
               <a
-                href={GENERAL_APPLICATION_LINK}
+                href={APPLICATION_FORM_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => {
+                  document.getElementById('subteams')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-ashGold text-charcoal font-bold rounded-lg text-lg hover:bg-goldLight transition-all duration-300 shadow-lg hover:shadow-glow"
               >
                 Apply Now
@@ -146,7 +137,7 @@ function RecruitingPage() {
       </section>
 
       {/* Subteams Grid */}
-      <section className="relative py-20 bg-jet overflow-hidden">
+      <section id="subteams" className="relative py-20 bg-jet overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-ashGold/30 to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-ashGold/5 via-transparent to-transparent pointer-events-none" />
 
@@ -154,17 +145,17 @@ function RecruitingPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our Subteams</h2>
             <div className="mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-ashGold to-transparent" />
-            <p className="mt-4 text-softWhite/60">
-              Click on a subteam to learn more about what they do
+            <p className="mt-4 text-softWhite/60 text-lg">
+              Click on a subteam to learn more about what they do and access their application forms.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-6">
             {SUBTEAMS.map((subteam, index) => (
               <Link
                 key={subteam.name}
                 href={`/recruiting/${subteam.slug}`}
-                className={`group relative p-8 rounded-2xl bg-charcoal/50 border border-white/5 ${subteam.hoverBorder} transition-all duration-500 hover:bg-charcoal hover:-translate-y-1 overflow-hidden ${
+                className={`w-full md:w-[calc(50%-12px)] group relative p-8 rounded-2xl bg-charcoal/50 border border-white/5 ${subteam.hoverBorder} transition-all duration-500 hover:bg-charcoal hover:-translate-y-1 overflow-hidden ${
                   isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: `${700 + index * 100}ms` }}
