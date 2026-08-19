@@ -96,10 +96,10 @@ function Competition() {
 
             {/* CTA */}
             <Link
-              href="/ace"
+              href="/ace2026"
               className="inline-flex items-center gap-3 px-6 py-3 bg-ashGold text-charcoal font-bold rounded-lg hover:bg-goldLight transition-all duration-300 shadow-lg hover:shadow-glow group"
             >
-              <span>Learn About ACE 2025</span>
+              <span>Learn About ACE 2026</span>
               <svg
                 className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                 fill="none"

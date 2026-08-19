@@ -7,7 +7,7 @@ import { FaInstagram, FaLinkedin, FaEnvelope, FaYoutube } from "react-icons/fa";
 function Footer() {
   const navLinks = [
     { href: "/recruiting", label: "Join the Team" },
-    { href: "/ace", label: "ACE 2025" },
+    { href: "/ace2026", label: "ACE 2026" },
     { href: "/team", label: "Team" },
     { href: "/design", label: "Design" },
     { href: "/sponsors", label: "Sponsors" },
