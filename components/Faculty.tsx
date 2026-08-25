@@ -23,6 +23,12 @@ const FacultySupport = [
     department: "Electrical & Computer Engineering",
   },
   {
+    name: "Dr. Scott Chen",
+    link: "https://www.eng.mcmaster.ca/ece/faculty/dr-scott-chen/",
+    headshot: "/headshots/Scott_Chen_headshot.jpg",
+    department: "Electrical & Computer Engineering",
+  },
+  {
     name: "Dr. Yaser Haddara",
     link: "https://experts.mcmaster.ca/display/yaser",
     headshot: "/headshots/Yaser_Haddara_headshot_cropped2.jpg",
@@ -86,14 +92,14 @@ function Faculty() {
         </div>
 
         {/* Faculty Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-6">
           {FacultySupport.map((faculty, index) => (
             <a
               key={faculty.name}
               href={faculty.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group flex items-center gap-6 p-6 rounded-2xl bg-charcoal/50 border border-white/5 hover:border-ashGold/30 transition-all duration-500 hover:bg-charcoal ${
+              className={`group w-full md:w-[calc(50%-12px)] flex items-center gap-6 p-6 rounded-2xl bg-charcoal/50 border border-white/5 hover:border-ashGold/30 transition-all duration-500 hover:bg-charcoal ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: `${400 + index * 100}ms` }}
