@@ -55,7 +55,7 @@ function TeamLeads() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            The dedicated individuals leading our team to success
+            The dedicated individuals leading our team to success.
           </p>
         </div>
 

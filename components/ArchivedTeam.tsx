@@ -12,6 +12,16 @@ interface ArchivedExec {
   linkedin_url?: string;
 }
 
+const getBorderColor = (title: string) => {
+  const lowerTitle = title.toLowerCase();
+  if (lowerTitle.includes("principal")) return "border-ashGold";
+  if (lowerTitle.includes("software")) return "border-mutedBlue";
+  if (lowerTitle.includes("electrical")) return "border-yellow-400";
+  if (lowerTitle.includes("mechanical")) return "border-steelRed";
+  if (lowerTitle.includes("safety")) return "border-purple-300";
+  return "border-ashGold/30";
+};
+
 function ArchivedTeam() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -62,7 +72,7 @@ function ArchivedTeam() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            For those who made the team what it is today
+            For those who made the team what it is today.
           </p>
         </div>
 
@@ -78,7 +88,11 @@ function ArchivedTeam() {
                 style={{ transitionDelay: `${400 + index * 100}ms` }}
               >
                 {/* Photo */}
-                <div className="flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden bg-white border-2 border-ashGold/30">
+                <div
+                  className={`flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden bg-white border-2 ${getBorderColor(
+                    exec.title
+                  )}`}
+                >
                   <img
                     src={exec.image_url || "/headshots/placeholder.png"}
                     alt={`${exec.name} headshot`}
