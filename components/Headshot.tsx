@@ -21,7 +21,7 @@ const Headshot: React.FC<HeadshotProps> = ({
     if (lowerTitle.includes("principal")) return "border-ashGold";
     if (lowerTitle.includes("software")) return "border-mutedBlue";
     if (lowerTitle.includes("electrical")) return "border-yellow-400";
-    if (lowerTitle.includes("mechanical")) return "border-gray-400";
+    if (lowerTitle.includes("mechanical")) return "border-red-900";
     if (lowerTitle.includes("safety")) return "border-dustyRose";
     return "border-ashGold/50";
   };
