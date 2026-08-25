@@ -106,7 +106,7 @@ function Faculty() {
             >
               {/* Headshot */}
               <div className="relative flex-shrink-0">
-                <div className="w-20 h-20 rounded-full overflow-hidden border-3 border-ashGold/50 group-hover:border-ashGold transition-colors duration-300">
+                <div className="w-20 h-20 rounded-full overflow-hidden bg-white border-2 border-ashGold/30 group-hover:border-ashGold transition-colors duration-300">
                   <img
                     src={faculty.headshot}
                     alt={faculty.name}
