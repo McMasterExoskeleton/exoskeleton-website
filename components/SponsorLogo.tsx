@@ -24,7 +24,15 @@ export default function SponsorLogo({
   size?: "md" | "lg";
 }) {
   const tile = size === "lg" ? "h-28 sm:h-32" : "h-24";
-  const cap = size === "lg" ? "max-h-14" : "max-h-11";
+
+  // Base box each mark is fitted into, then scaled per logo so a square mark
+  // and a very wide one carry the same visual weight. object-contain keeps the
+  // aspect ratio; the scale only changes how much of the box the mark gets.
+  const base = size === "lg" ? { h: 60, w: 210 } : { h: 46, w: 165 };
+  const k = sponsor.scale ?? 1;
+  const aspect = sponsor.aspect ?? 2.5;
+  const intrinsicW = 240;
+  const intrinsicH = Math.round(intrinsicW / aspect);
 
   return (
     <a
@@ -36,13 +44,14 @@ export default function SponsorLogo({
       <Image
         src={sponsor.logo}
         alt={sponsor.name}
-        width={240}
-        height={96}
+        width={intrinsicW}
+        height={intrinsicH}
         // next/image rejects SVG unless dangerouslyAllowSVG is enabled globally,
         // which would also let SVGs served from public/ run script. These are
         // small vector files, so skip the optimizer for them instead.
         unoptimized={sponsor.logo.endsWith(".svg")}
-        className={`${cap} w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03] ${
+        style={{ maxHeight: base.h * k, maxWidth: base.w * k }}
+        className={`h-auto w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03] ${
           sponsor.invert ? "invert" : ""
         }`}
       />
