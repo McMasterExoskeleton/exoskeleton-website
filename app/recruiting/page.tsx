@@ -6,11 +6,7 @@ import Reveal from "@/components/ui/Reveal";
 import Button, { ArrowRight } from "@/components/ui/Button";
 import { SUBTEAMS } from "@/data/subteams";
 import { SITE } from "@/data/site";
-import {
-  APPLICATIONS_OPEN,
-  APPLICATION_FORM_LINK,
-  APPLICATION_NOTE,
-} from "./constants";
+import { APPLICATIONS_OPEN, APPLICATION_FORM_LINK } from "./constants";
 
 export const metadata: Metadata = {
   title: "Join the Team",
@@ -45,22 +41,19 @@ export default function RecruitingPage() {
         focal="40% 55%"
         actions={
           APPLICATIONS_OPEN ? (
-            <div className="flex flex-col gap-2">
-              <div className="flex flex-wrap gap-3">
-                <Button
-                  href={APPLICATION_FORM_LINK}
-                  external
-                  size="lg"
-                  trailing={<ArrowRight />}
-                >
-                  Apply now
-                </Button>
-                <Button href="#subteams" variant="ghost" size="lg">
-                  See the subteams
-                </Button>
-              </div>
-              <p className="text-sm text-softWhite/50">{APPLICATION_NOTE}</p>
-            </div>
+            <>
+              <Button
+                href={APPLICATION_FORM_LINK}
+                external
+                size="lg"
+                trailing={<ArrowRight />}
+              >
+                Apply now
+              </Button>
+              <Button href="#subteams" variant="ghost" size="lg">
+                See the subteams
+              </Button>
+            </>
           ) : (
             <Button href={`mailto:${SITE.email}`} external size="lg">
               Email us about openings
@@ -174,9 +167,6 @@ export default function RecruitingPage() {
                 See what we build
               </Button>
             </div>
-            {APPLICATIONS_OPEN && (
-              <p className="mt-4 text-sm text-softWhite/50">{APPLICATION_NOTE}</p>
-            )}
           </div>
         </Reveal>
       </Section>
