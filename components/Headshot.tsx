@@ -23,10 +23,16 @@ export default function Headshot({
 
   return (
     <div className="group flex flex-col items-center card p-5 text-center card-interactive">
+      {/*
+        White, not the card colour. Eight of the ten roster photos are cutouts
+        with a white background baked in and two are genuinely transparent, so a
+        dark circle rendered those two dark and the rest white. White matches
+        the majority and makes all ten read as one set.
+      */}
       <div
         className={`relative ${dim} shrink-0 overflow-hidden rounded-full border-2 ${roleAccent(
           person.title
-        )} bg-charcoal`}
+        )} bg-white`}
       >
         <Image
           src={person.image_url}

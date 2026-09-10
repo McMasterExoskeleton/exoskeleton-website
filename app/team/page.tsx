@@ -110,18 +110,21 @@ export default function TeamPage() {
                   sizes="64px"
                   className="h-16 w-16 shrink-0 rounded-full border border-hairline/15 object-cover object-[center_15%]"
                 />
-                <span className="min-w-0">
-                  <span className="flex items-center gap-2 font-medium text-softWhite group-hover:text-ashGold transition-colors">
+                <span className="min-w-0 pr-5">
+                  <span className="block font-medium text-softWhite group-hover:text-ashGold transition-colors">
                     {person.name}
-                    <FaExternalLinkAlt
-                      className="shrink-0 opacity-0 transition-opacity group-hover:opacity-70"
-                      size={11}
-                    />
                   </span>
                   <span className="mt-0.5 block text-sm text-softWhite/55">
                     {person.department}
                   </span>
                 </span>
+                {/* Pinned to the corner so it sits in the same place on every
+                    card, rather than drifting with the length of the name. */}
+                <FaExternalLinkAlt
+                  aria-hidden
+                  size={11}
+                  className="absolute right-3.5 top-3.5 text-softWhite/45 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-hover:text-ashGold"
+                />
               </a>
             </Reveal>
           ))}
