@@ -38,26 +38,30 @@ export default function Header() {
     pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${
-        scrolled || menuOpen
-          ? "bg-jet/90 backdrop-blur-xl border-b border-hairline/10"
-          : "bg-transparent"
-      }`}
-    >
+    <header className="fixed top-0 inset-x-0 z-50">
       {/*
-        At the top of the page the nav sits over photography, so it needs a
-        scrim to stay legible. Painting that gradient as the header's own
-        background clipped it to the 80px header box, which left a hard dark
-        edge across the hero. This overlay is taller than the header, so it
-        fades out well below it.
+        Both backgrounds are always mounted and cross-faded on scroll. They used
+        to be swapped conditionally, so the blurred bar and the scrim popped in
+        and out in a single frame — which read as a hard edge appearing under
+        the nav rather than a transition.
       */}
-      {!scrolled && !menuOpen && (
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[linear-gradient(to_bottom,rgb(10_10_9/0.96)_0%,rgb(10_10_9/0.88)_45%,rgb(10_10_9/0.45)_72%,transparent_100%)]"
-        />
-      )}
+      <div
+        aria-hidden
+        className={`pointer-events-none absolute inset-0 border-b border-hairline/10 bg-jet/90 backdrop-blur-xl transition-opacity duration-300 ${
+          scrolled || menuOpen ? "opacity-100" : "opacity-0"
+        }`}
+      />
+      {/*
+        Scrim for when the nav sits over photography. Taller than the header so
+        it fades out well below it instead of stopping at the header's edge.
+      */}
+      <div
+        aria-hidden
+        className={`pointer-events-none absolute inset-x-0 top-0 h-40 bg-[linear-gradient(to_bottom,rgb(10_10_9/0.92)_0%,rgb(10_10_9/0.78)_40%,rgb(10_10_9/0.38)_70%,transparent_100%)] transition-opacity duration-300 ${
+          scrolled || menuOpen ? "opacity-0" : "opacity-100"
+        }`}
+      />
+
       <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link

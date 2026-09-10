@@ -30,7 +30,9 @@ function LogoGrid({
     <ul
       className={`grid gap-3 ${
         size === "lg"
-          ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
+          // Gold gets three across rather than four: wider tiles, which both
+          // gives the wide marks room to breathe and reflects the tier.
+          ? "grid-cols-2 sm:grid-cols-2 lg:grid-cols-3"
           : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
       }`}
     >
