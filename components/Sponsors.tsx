@@ -13,7 +13,7 @@ import { SITE, SPONSORSHIP_PACKAGE } from "@/data/site";
 const AFFILIATES = [
   {
     name: "McMaster Engineering Society",
-    logo: "/MES_logo.svg",
+    logo: "/MES_logo.png",
     website: "https://www.macengsociety.ca/",
     role: "Our governing student society",
   },

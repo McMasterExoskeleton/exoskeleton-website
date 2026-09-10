@@ -79,7 +79,7 @@ export const sponsors: Record<"bronze" | "silver" | "gold", SponsorProps[]> = {
       name: "Solid Works",
       logo: "/solidworks-logo.svg",
       aspect: 3.261,
-      scale: 0.95,
+      scale: 1.15,
       website: "https://www.solidworks.com/",
     },
     {
@@ -91,9 +91,9 @@ export const sponsors: Record<"bronze" | "silver" | "gold", SponsorProps[]> = {
     },
     {
       name: "McMaster Engineering Society",
-      logo: "/MES_logo.svg",
-      aspect: 1.0,
-      scale: 1.45,
+      logo: "/MES_logo.png",
+      aspect: 2.428,
+      scale: 1.0,
       website: "https://www.macengsociety.ca/",
     },
   ],
@@ -154,7 +154,7 @@ export const sponsors: Record<"bronze" | "silver" | "gold", SponsorProps[]> = {
       name: "3JPrecision",
       logo: "/3JPrecision_logo.png",
       aspect: 2.037,
-      scale: 1.1,
+      scale: 1.32,
       website: "https://www.3jprecision.com/",
     },
     {
