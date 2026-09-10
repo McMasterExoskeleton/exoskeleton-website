@@ -23,7 +23,7 @@ export default function SponsorLogo({
   sponsor: SponsorProps;
   size?: "md" | "lg";
 }) {
-  const tile = size === "lg" ? "h-36 sm:h-40" : "h-32";
+  const tile = size === "lg" ? "h-28 sm:h-32" : "h-24";
 
   // The mark is fitted into an explicitly sized box rather than left at its
   // intrinsic size. `w-auto` sizes an <img> from its width/height attributes and
@@ -32,7 +32,7 @@ export default function SponsorLogo({
   //
   // `scale` is a multiplier on this box, tuned per logo, and the box itself is
   // capped at 100% of the tile so an over-scaled mark can never spill out.
-  const base = size === "lg" ? { h: 104, w: 320 } : { h: 80, w: 190 };
+  const base = size === "lg" ? { h: 56, w: 200 } : { h: 44, w: 152 };
   const k = sponsor.scale ?? 1;
   const aspect = sponsor.aspect ?? 2.5;
 
@@ -41,7 +41,7 @@ export default function SponsorLogo({
       href={sponsor.website}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group flex ${tile} items-center justify-center rounded-xl border border-hairline/10 bg-white/[0.93] px-4 py-4 transition-all duration-300 hover:border-ashGold/50 hover:bg-white hover:-translate-y-0.5`}
+      className={`group flex ${tile} items-center justify-center rounded-xl border border-hairline/10 bg-white/[0.93] px-5 py-4 transition-all duration-300 hover:border-ashGold/50 hover:bg-white hover:-translate-y-0.5`}
     >
       <span
         className="flex max-h-full max-w-full items-center justify-center transition-transform duration-300 group-hover:scale-[1.03]"
