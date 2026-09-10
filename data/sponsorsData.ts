@@ -17,6 +17,11 @@ export type SponsorProps = {
    * tile. The value equalises rendered ink area — see the comment in
    * components/SponsorLogo.tsx. Source files were also trimmed of baked-in
    * whitespace first (CubeMars was 60% empty margin, Pfaff 35%).
+   *
+   * A few are hand-tuned above the computed value. Area normalisation measures
+   * the ink bounding box, which over-counts a mark whose box is padded out by a
+   * small tagline (CubeMars) or a thin wordmark (PCB Libraries), and
+   * under-counts a square crest sitting among wide marks (MES).
    */
   scale?: number;
   /**
@@ -74,7 +79,7 @@ export const sponsors: Record<"bronze" | "silver" | "gold", SponsorProps[]> = {
       name: "Solid Works",
       logo: "/solidworks-logo.svg",
       aspect: 3.261,
-      scale: 0.91,
+      scale: 1.12,
       website: "https://www.solidworks.com/",
     },
     {
@@ -88,7 +93,7 @@ export const sponsors: Record<"bronze" | "silver" | "gold", SponsorProps[]> = {
       name: "McMaster Engineering Society",
       logo: "/MES_logo.svg",
       aspect: 1.0,
-      scale: 1.64,
+      scale: 1.95,
       website: "https://www.macengsociety.ca/",
     },
   ],
@@ -104,7 +109,7 @@ export const sponsors: Record<"bronze" | "silver" | "gold", SponsorProps[]> = {
       name: "CubeMars",
       logo: "/cubemars-logo.webp",
       aspect: 3.764,
-      scale: 0.87,
+      scale: 1.22,
       website: "https://www.cubemars.com/",
       needsBackground: true,
     },
@@ -120,14 +125,14 @@ export const sponsors: Record<"bronze" | "silver" | "gold", SponsorProps[]> = {
       name: "PCB Libraries",
       logo: "/pcb-libraries.png",
       aspect: 3.298,
-      scale: 0.91,
+      scale: 1.22,
       website: "https://www.pcblibraries.com/",
     },
     {
       name: "EZMotion",
       logo: "/ezmotion-logo-dark.png",
       aspect: 6.333,
-      scale: 1.0,
+      scale: 1.25,
       website: "https://www.ezmotion.co/",
     },
     {
@@ -149,14 +154,14 @@ export const sponsors: Record<"bronze" | "silver" | "gold", SponsorProps[]> = {
       name: "3JPrecision",
       logo: "/3JPrecision_logo.png",
       aspect: 2.037,
-      scale: 1.15,
+      scale: 1.38,
       website: "https://www.3jprecision.com/",
     },
     {
       name: "Pfaff Technologies",
       logo: "/pfaff_logo.webp",
       aspect: 3.139,
-      scale: 0.93,
+      scale: 1.18,
       website: "https://pfafftechnologies.com/",
       needsBackground: true,
     },

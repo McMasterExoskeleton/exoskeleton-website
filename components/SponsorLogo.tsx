@@ -51,7 +51,7 @@ export default function SponsorLogo({
         // small vector files, so skip the optimizer for them instead.
         unoptimized={sponsor.logo.endsWith(".svg")}
         style={{ maxHeight: base.h * k, maxWidth: base.w * k }}
-        className={`h-auto w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03] ${
+        className={`h-auto w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.03] ${
           sponsor.invert ? "invert" : ""
         }`}
       />

@@ -42,10 +42,23 @@ export default function Header() {
       className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${
         scrolled || menuOpen
           ? "bg-jet/90 backdrop-blur-xl border-b border-hairline/10"
-          : "bg-gradient-to-b from-jet via-jet/70 to-transparent border-b border-transparent"
+          : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      {/*
+        At the top of the page the nav sits over photography, so it needs a
+        scrim to stay legible. Painting that gradient as the header's own
+        background clipped it to the 80px header box, which left a hard dark
+        edge across the hero. This overlay is taller than the header, so it
+        fades out well below it.
+      */}
+      {!scrolled && !menuOpen && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[linear-gradient(to_bottom,rgb(10_10_9/0.96)_0%,rgb(10_10_9/0.88)_45%,rgb(10_10_9/0.45)_72%,transparent_100%)]"
+        />
+      )}
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link
             href="/"
