@@ -15,8 +15,17 @@
   /* Ground. Warmed very slightly off pure neutral — every well-made dark site
      tints its ground rather than using flat grey (Railway purple, Supabase
      green, Warp olive). Ours leans warm to sit under the gold. */
-  --jet: #0a0a09;
-  --charcoal: #141312;
+  /*
+   * Raw channel triplets as well as hex. Tailwind can only apply an opacity
+   * modifier (bg-jet/90) to a custom property when the colour is declared as
+   * `rgb(var(--x) / <alpha-value>)`; given a bare `var(--jet)` it silently
+   * emits no rule at all, so every bg-jet/NN on the site resolved to
+   * transparent. The hex forms stay for direct var() use in plain CSS below.
+   */
+  --jet-rgb: 10 10 9;
+  --charcoal-rgb: 20 19 18;
+  --jet: rgb(var(--jet-rgb));
+  --charcoal: rgb(var(--charcoal-rgb));
   --gold: #bda968;
   --gold-light: #d4c48a;
   --gold-dark: #9a8954;

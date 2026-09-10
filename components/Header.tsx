@@ -38,16 +38,23 @@ export default function Header() {
     pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50">
+    // translate-z-0 keeps the bar on its own compositing layer, so it repaints
+    // cleanly instead of being re-rastered against the scrolling content.
+    <header className="fixed top-0 inset-x-0 z-50 transform-gpu">
       {/*
-        Both backgrounds are always mounted and cross-faded on scroll. They used
-        to be swapped conditionally, so the blurred bar and the scrim popped in
-        and out in a single frame — which read as a hard edge appearing under
-        the nav rather than a transition.
+        Both backgrounds are always mounted and cross-faded on scroll, rather
+        than swapped, so neither pops in within a single frame.
+
+        Neither layer uses backdrop-filter. A backdrop-filter on a position:fixed
+        element makes the compositor sample the scrolling content behind it every
+        frame, and Chrome and Safari both smear or band the element's edges while
+        that happens — worst when scrolling back up, where stale tiles get
+        reused. The bar is 95% opaque on an already-dark page, so the blur was
+        contributing almost nothing visually.
       */}
       <div
         aria-hidden
-        className={`pointer-events-none absolute inset-0 border-b border-hairline/10 bg-jet/90 backdrop-blur-xl transition-opacity duration-300 ${
+        className={`pointer-events-none absolute inset-0 border-b border-hairline/10 bg-jet/95 transition-opacity duration-300 ${
           scrolled || menuOpen ? "opacity-100" : "opacity-0"
         }`}
       />
@@ -57,7 +64,7 @@ export default function Header() {
       */}
       <div
         aria-hidden
-        className={`pointer-events-none absolute inset-x-0 top-0 h-40 bg-[linear-gradient(to_bottom,rgb(10_10_9/0.92)_0%,rgb(10_10_9/0.78)_40%,rgb(10_10_9/0.38)_70%,transparent_100%)] transition-opacity duration-300 ${
+        className={`pointer-events-none absolute inset-x-0 top-0 h-40 bg-[linear-gradient(to_bottom,rgb(10_10_9/0.96)_0%,rgb(10_10_9/0.78)_40%,rgb(10_10_9/0.38)_70%,transparent_100%)] transition-opacity duration-300 ${
           scrolled || menuOpen ? "opacity-0" : "opacity-100"
         }`}
       />
@@ -172,7 +179,7 @@ export default function Header() {
         id="mobile-nav"
         hidden={!menuOpen}
         aria-label="Main"
-        className="md:hidden border-t border-hairline/10 bg-jet/98 backdrop-blur-xl"
+        className="md:hidden border-t border-hairline/10 bg-jet"
       >
         <div className="px-4 py-3 max-h-[calc(100vh-5rem)] overflow-y-auto">
           {NAV_LINKS.map((link) => (

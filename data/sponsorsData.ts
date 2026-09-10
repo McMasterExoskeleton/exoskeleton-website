@@ -125,7 +125,7 @@ export const sponsors: Record<"bronze" | "silver" | "gold", SponsorProps[]> = {
       name: "PCB Libraries",
       logo: "/pcb-libraries.png",
       aspect: 2.539,
-      scale: 1.05,
+      scale: 1.2,
       website: "https://www.pcblibraries.com/",
     },
     {

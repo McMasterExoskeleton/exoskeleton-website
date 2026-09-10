@@ -12,8 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         // Primary palette
-        jet: 'var(--jet)',
-        charcoal: 'var(--charcoal)',
+        // Must be the rgb(var(--x) / <alpha-value>) form, otherwise Tailwind
+        // emits nothing for opacity modifiers like bg-jet/90.
+        jet: 'rgb(var(--jet-rgb) / <alpha-value>)',
+        charcoal: 'rgb(var(--charcoal-rgb) / <alpha-value>)',
         // Warm off-white that all hairlines and low-alpha surfaces derive from.
         hairline: 'rgb(var(--hair) / <alpha-value>)',
         softWhite: '#F5F5F5',
